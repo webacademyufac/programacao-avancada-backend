@@ -77,7 +77,7 @@ console.log(nomeMaiusculo.slice(0,6))
 
 //arrays, vetores, listas
 */
-const lista = ['a','b','c','d','e']
+//const lista = ['a','b','c','d','e']
 /*console.log(lista.length)
 console.log(lista[2])
 console.log(typeof lista)
@@ -96,7 +96,7 @@ lista.shift()
 console.log(lista)
 lista.unshift('h')
 console.log(lista)
-*/
+
 //object literals - estruturas que descrema entidade.
 const produto = {
     nome: 'Camisa',
@@ -133,8 +133,106 @@ console.log(typeof json2)
 const jsonErrado = JSON.stringify('{"nome":"Scooby","idade":10,}')
 console.log(jsonErrado)
 
+Desafio 1: armazene 5 dados numéricos em um vetor. Em seguida, copie para um objeto com as propriedade n1, n2, n3, n4, n5. Utilize destructuring para copiar os valores para 5 variáveis. Construa um objeto JSON com os valores das variáveis.
 
+const vetor = [1, 2, 3, 4, 5]
 
+const objeto = {
+    n1: vetor[0],
+    n2: vetor[1],
+    n3: vetor[2],
+    n4: vetor[3],
+    n5: vetor[4]
+}
 
+const { n1, n2, n3, n4, n5 } = objeto
 
+const jsonVetor = JSON.stringify({ n1,n2,n3,n4,n5 })
+console.log(jsonVetor)
+console.log(typeof jsonVetor)
 
+Desafio 2: desenvolva uma calculadora que armazene em um objeto JSON o resultado das 4 operações básica. Em outras palavras: crie um objeto calculadora, inicializando cada uma das operações com o resultado do processamento matemático vindo de duas variáveis e converta para um objeto JSON.
+
+const num1 = 10, num2 = 20
+
+const calculadora = {
+    soma: num1+num2,
+    sub: num1-num2,
+    mult: num1*num2,
+    div: num1/num2
+}
+
+const jsonCalc = JSON.stringify(calculadora)
+console.log(jsonCalc)
+*/
+//estruturas, métodos de listas, funções
+
+const n = 100
+if(n > 10){ // > < >= <= == !=
+    console.log('Teste de entrada no if.')
+}
+
+const texto = '0'
+if(texto === 0)
+    console.log("Os dados são iguais.")
+else if(true) 
+    console.log('Segundo if - if aninhado.')
+else
+    console.log('Saída...') // erro na hora de pensar o código...
+
+//operador ternário
+const resultado =  n > 20 ? true : false
+console.log(resultado)
+console.log(typeof resultado)
+
+//repetição: precisa de 3 partes - variável de controle e a inicialização dela; condição/critério de parada; alteração do valor da variável de controle
+
+let contador = 0
+const lista = [1, 7, 3, 64, 2, 0]
+while(contador < lista.length){
+    console.log('O \'elemento\' da\n vez é ' + lista[contador] + '.')
+    contador++ // contador = contador + 1
+}
+
+const outraLista = ['a', 'b', 'd', 'e', 'c']
+for(let contador = 0; contador < outraLista.length; contador++)
+    console.log(`O elemento da 
+    vez é ${outraLista[contador]}.`) //template literais, ou template strings
+
+const testeLiteral = (`\``==="`")
+console.log(`\\`)
+
+const a=3, b=5
+console.log('Oito é '+(a+b)+' \ne não '+(2*a+b))
+console.log(`Oito é ${(a+b)} 
+e não ${(2*a+b)}`)
+
+//métodos de listas-arrays-vetores
+const nomes = ['Abimael','Cleyciane','Paulo','Victor']
+nomes.forEach(function(nome){
+    console.log(nome)
+})
+
+const nomesModificados = nomes.map(function(nome){
+    if(nome === 'Paulo'){
+        nome = 'O Grande'
+        return nome
+    }else
+        return nome
+})
+
+nomesModificados.forEach(function(nome){
+    console.log(nome)
+})
+
+const numerosGrandes = ['60','1','9','17','99','94'].filter(function(numero){
+    return (numero>10)
+})
+
+numerosGrandes.forEach(function(numero){
+    console.log(numero)
+})
+
+console.log(numerosGrandes.reduce(function(total,numero){
+    return parseInt(total)+parseInt(numero)
+}))
