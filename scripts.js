@@ -237,7 +237,7 @@ console.log(numerosGrandes.reduce(function(total,numero){
     return parseInt(total)+parseInt(numero)
 }))
 
-*/
+
 
 //funções
 
@@ -268,7 +268,7 @@ const lista = ['esse cara é maior','b','c','d']
 
 console.log(lista.map(elemento => elemento.length))
 
-//clousures - fechametos
+//closures - fechametos
 
 let x = 10
 
@@ -291,3 +291,77 @@ function fora(){
 console.log(fora())
 
 const fora = () => ((x=7), ()=>x+5)  ()
+
+*/
+
+//Orientação a Objetos
+
+class Produto {
+    constructor(nome, preco){
+        this.nome = nome
+        this.preco = preco
+    }
+    detalhesDoProduto(){
+        return `O preço do produto ${this.nome} é R$ ${this.preco}.`
+    }
+}
+
+const oculos = new Produto('óculos', 19.90)
+
+
+//herança
+
+class ProdutoComTamanho extends Produto{
+    constructor(nome, preco, tamanho){
+        super(nome, preco)
+        this.tamanho = tamanho
+    }
+
+    outraMensagem(adjetivo){
+        return `O produto ${this.nome} é ${adjetivo} demais.`
+    }
+}
+
+const camisa = new ProdutoComTamanho('camisa', 26.99, 'M')
+console.log(camisa.detalhesDoProduto())
+console.log(camisa.outraMensagem('bom'))
+
+//console.log(oculos.outraMensagem())
+
+//DOM - Document Object Model
+
+const titulo = document.getElementById('titulo')
+console.log(titulo)
+
+//query selector
+
+const mesmoTitulo = document.querySelector('#titulo')
+console.log(mesmoTitulo)
+
+const todosOsParagrafos = document.querySelectorAll('.texto')
+console.log(todosOsParagrafos)
+
+todosOsParagrafos.forEach((texto) => console.log(texto.textContent.toUpperCase()))
+
+//manipulação
+
+const textoAlterado = todosOsParagrafos[0].textContent
+console.log(textoAlterado)
+
+todosOsParagrafos[4].innerHTML = textoAlterado
+
+todosOsParagrafos[3].classList.add('outra-classe')
+
+todosOsParagrafos[3].classList.remove('texto')
+
+titulo.remove()
+
+todosOsParagrafos[0].remove()
+
+//eventos
+
+const botao = document.getElementById('botao')
+
+botao.addEventListener('click', function(){
+    todosOsParagrafos[2].style.backgroundColor = 'red'
+})
