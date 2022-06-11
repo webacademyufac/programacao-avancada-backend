@@ -397,3 +397,6 @@ const vet = [1, 2, 3, 4, 5]
 
 // const jsoncalcula = JSON.stringify({soma, subtracao, divisao, multiplicacao})
 // console.log(jsoncalcula)
+
+
+//10/06/2022
