@@ -1,6 +1,9 @@
-/*console.log("Hello, world, Javascript!")
+console.log("Hello, world, Javascript!")
+/*
 
-//variáveis
+//Resumão básico como introdução para posteriormente utilizar nodeJs
+
+//variáveis javascript 
 var x = 10 //number
 //formas mais convenientes de declarar variáveis
 let y = 50
@@ -16,9 +19,9 @@ if(1){
 
 console.log(y)
 
-//tipos
+//tipos de variáveis
 
-const nome = "Victor"
+const nome = "Aluizio"
 console.log(nome)
 console.log(typeof nome)
 
@@ -46,23 +49,23 @@ console.log(vouf)
 console.log(typeof vouf)
 
 //array
-const vetor = ['Java', 10, false]
+const vetor = ['PHP', 10, false]
 console.log(vetor[1])
 console.log(typeof vetor)
 console.log(vetor.length)
 
 
-//object literals
+//objetos literais
 const usuario = { 
     email: 'eu@email.com',
     senha: 'teste123', 
-    nome: 'Victor', 
+    nome: 'Eu', 
     idade: 31
 }
 
 console.log(typeof usuario)
 
-const nome = 'Victor Vieira'
+const nome = 'Eu Fulano'
 console.log(nome.length)
 //const stringParaVetor = nome.split('')
 //console.log(stringParaVetor)
@@ -97,7 +100,7 @@ console.log(lista)
 lista.unshift('h')
 console.log(lista)
 
-//object literals - estruturas que descrema entidade.
+//objetos literais
 const produto = {
     nome: 'Camisa',
     preco: 9.99,
@@ -108,7 +111,7 @@ const produto = {
 
 console.log(produto['preco'])
 
-//destructuring - recurso para objetos, para extrair conteúdo de dentro deles
+//desestruturando objetos para obter dados
 const { preco, emEstoque } = produto
 console.log(preco)
 console.log(emEstoque)
@@ -164,204 +167,217 @@ const calculadora = {
 
 const jsonCalc = JSON.stringify(calculadora)
 console.log(jsonCalc)
-
+*/
 //estruturas, métodos de listas, funções
 
-const n = 100
-if(n > 10){ // > < >= <= == !=
-    console.log('Teste de entrada no if.')
-}
+// const n = 100
+// if(n > 10){ // > < >= <= == !=
+//     console.log('Teste de entrada no if.')
+// }
 
-const texto = '0'
-if(texto === 0)
-    console.log("Os dados são iguais.")
-else if(true) 
-    console.log('Segundo if - if aninhado.')
-else
-    console.log('Saída...') // erro na hora de pensar o código...
+// const texto = '0'
+// if(texto === 0)
+//     console.log("Os dados são iguais.")
+// else if(true) 
+//     console.log('Segundo if - if aninhado.')
+// else
+//     console.log('Saída...') // erro na hora de pensar o código...
 
-//operador ternário
-const resultado =  n > 20 ? true : false
-console.log(resultado)
-console.log(typeof resultado)
+// operador ternário
+// const resultado =  n > 20 ? true : false
+// console.log(resultado)
+// console.log(typeof resultado)
 
-//repetição: precisa de 3 partes - variável de controle e a inicialização dela; condição/critério de parada; alteração do valor da variável de controle
+// repetição: precisa de 3 partes - variável de controle e a inicialização dela; condição/critério de parada; alteração do valor da variável de controle
 
-let contador = 0
-const lista = [1, 7, 3, 64, 2, 0]
-while(contador < lista.length){
-    console.log('O \'elemento\' da\n vez é ' + lista[contador] + '.')
-    contador++ // contador = contador + 1
-}
+// let contador = 0
+// const lista = [1, 7, 3, 64, 2, 0]
+// while(contador < lista.length){
+//     console.log('O \'elemento\' da\n vez é ' + lista[contador] + '.')
+//     contador++ // contador = contador + 1
+// }
 
-const outraLista = ['a', 'b', 'd', 'e', 'c']
-for(let contador = 0; contador < outraLista.length; contador++)
-    console.log(`O elemento da 
-    vez é ${outraLista[contador]}.`) //template literais, ou template strings
+// const outraLista = ['a', 'b', 'd', 'e', 'c']
+// for(let contador = 0; contador < outraLista.length; contador++)
+//     console.log(`O elemento da 
+//     vez é ${outraLista[contador]}.`) //template literais, ou template strings
 
-const testeLiteral = (`\``==="`")
-console.log(`\\`)
+// const testeLiteral = (`\``==="`")
+// console.log(`\\`)
 
-const a=3, b=5
-console.log('Oito é '+(a+b)+' \ne não '+(2*a+b))
-console.log(`Oito é ${(a+b)} 
-e não ${(2*a+b)}`)
+// const a=3, b=5
+// console.log('Oito é '+(a+b)+' \ne não '+(2*a+b))
+// console.log(`Oito é ${(a+b)} 
+// e não ${(2*a+b)}`)
 
-//métodos de listas-arrays-vetores
-const nomes = ['Abimael','Cleyciane','Paulo','Victor']
-nomes.forEach(function(nome){
-    console.log(nome)
-})
+// //métodos de listas-arrays-vetores
+// const nomes = ['Abimael','Cleyciane','Paulo','Aluizio']
+// nomes.forEach(function(nome){
+//     console.log(nome)
+// })
 
-const nomesModificados = nomes.map(function(nome){
-    if(nome === 'Paulo'){
-        nome = 'O Grande'
-        return nome
-    }else
-        return nome
-})
+// const nomesModificados = nomes.map(function(nome){
+//     if(nome === 'Paulo'){
+//         nome = 'O Grande'
+//         return nome
+//     }else
+//         return nome
+// })
 
-nomesModificados.forEach(function(nome){
-    console.log(nome)
-})
+// nomesModificados.forEach(function(nome){
+//     console.log(nome)
+// })
 
-const numerosGrandes = ['60','1','9','17','99','94'].filter(function(numero){
-    return (numero>10)
-})
+// const numerosGrandes = ['60','1','9','17','99','94'].filter(function(numero){
+//     return (numero>10)
+// })
 
-numerosGrandes.forEach(function(numero){
-    console.log(numero)
-})
+// numerosGrandes.forEach(function(numero){
+//     console.log(numero)
+// })
 
-console.log(numerosGrandes.reduce(function(total,numero){
-    return parseInt(total)+parseInt(numero)
-}))
+// console.log(numerosGrandes.reduce(function(total,numero){
+//     return parseInt(total)+parseInt(numero)
+// }))
 
+// function minhaFuncao(){
+//     console.log("Teste");
+// }
+// minhaFuncao();
 
+// const funcao = function minhaFuncao(nome, sobrenome){
+//     // console.log(`O nome completo é ${nome} ${sobrenome}.`)
+//     // console.log(typeof nome, typeof sobrenome);
+//     return (`O nome completo é ${nome} ${sobrenome}.`);
+// }
+// const nome = 'Aluízio'
+// const sobrenome = 'Catão'
+// console.log(funcao(nome, sobrenome))
+// funcao(10, 31)
 
-//funções
+// //arrow function
+// const soma = (a, b) => {
+//     return a + b;
+// }
+// console.log(soma(2,3))
 
-function minhaFuncao(){
-    console.log('Estou dentro da minha função.')
-}
+// const lista = ['esse cara é maior', 'b', 'c', 'd']
 
-minhaFuncao()
+// console.log(lista.map(elemento => elemento.length ))
 
-const funcao = function minhaFuncao(nome, sobrenome){
-    console.log(typeof nome)
-    return (`${nome} ${sobrenome}`)
-}
+// //Exemplo de Clousure
+// function makeFunc() {
+//     const name = "Mozilla";
+    
+//     function displayName() {
+//         console.log(name);
+//     }
+    
+//     return displayName;
+// }
+  
+// const myFunc = makeFunc();
+// myFunc();
 
-const nome = 'Victor'
-const sobrenome = 'Vieira'
-console.log(funcao(nome, sobrenome))
-minhaFuncao(10,20)
+// let x = 20
+// const fora = () => {
+//     let x = 18
+//     function somarXMais5(){
+//         console.log(x + 5);
+//     }
+//     return somarXMais5();
+// }
+// fora()
 
-console.log(typeof funcao)
+//REsoolução do professor 01
+// let x = 10
+// let fora = () => (() => x+ 5)()
+// console.log(fora())
+// console.log(typeof fora())
 
-//arrow functions - funções flecha
-const soma = (a,b) => a+b
+//REsolução do Professor 02
+// let x = 10
+// const fora = () => ((x + 7), () => x + 5) ()
+// console.log(fora())
+//Fim da resolução do professor
+//Fim do Exemplo de Clousure
 
-console.log(soma(5,3))
-
-const lista = ['esse cara é maior','b','c','d']
-
-console.log(lista.map(elemento => elemento.length))
-
-//closures - fechametos
-
-let x = 10
-
-function fora(){
-    //não é uma clousure
-    function somarXMais5(){
-        return x+5
-    }
-    return somarXMais5()
-}
-console.log(fora())
-
-function fora(){
-    let x = 7
-    function somarXMais5(){
-        return x+5
-    }
-    return somarXMais5()
-}
-console.log(fora())
-
-const fora = () => ((x=7), ()=>x+5)  ()
-
-*/
-
-//Orientação a Objetos
-
+//Vamos falar de orientação a objetos 
 class Produto {
     constructor(nome, preco){
         this.nome = nome
         this.preco = preco
     }
     detalhesDoProduto(){
-        return `O preço do produto ${this.nome} é R$ ${this.preco}.`
+        console.log(`O preço do produto ${this.nome} é R$ ${this.preco}`)
     }
 }
 
-const oculos = new Produto('óculos', 19.90)
+const camisa = new Produto('Camisa', 19.90)
+console.log(camisa.nome)
+console.log(typeof camisa)
+console.log(camisa.detalhesDoProduto())
 
+const meia = new Produto('Meia', 8.50)
+console.log(meia.nome)
+console.log(typeof meia)
+console.log(meia.detalhesDoProduto())
 
-//herança
+//Vamos falar sobre herança.
 
 class ProdutoComTamanho extends Produto{
     constructor(nome, preco, tamanho){
         super(nome, preco)
         this.tamanho = tamanho
     }
-
     outraMensagem(adjetivo){
         return `O produto ${this.nome} é ${adjetivo} demais.`
     }
 }
+const tenis = new ProdutoComTamanho('Nike', 26.50, 39)
+console.log(tenis.nome)
+console.log(tenis.preco)
+console.log(tenis.tamanho)
+console.log(tenis.detalhesDoProduto())
+console.log(tenis.outraMensagem('Lindo'))
 
-const camisa = new ProdutoComTamanho('camisa', 26.99, 'M')
-console.log(camisa.detalhesDoProduto())
-console.log(camisa.outraMensagem('bom'))
+//dom dom dom dom DOM - Vamos jogar DOOM agora
 
-//console.log(oculos.outraMensagem())
+const titulo = document.getElementById('title')
+console.log(title)
 
-//DOM - Document Object Model
+//Query selector
+const mesmoTitle = document.querySelector('#title')
+console.log(mesmoTitle)
 
-const titulo = document.getElementById('titulo')
-console.log(titulo)
+const todosOsPs = document.querySelectorAll('.texto')
+console.log(todosOsPs)
+console.log(todosOsPs[1])
+console.log(typeof todosOsPs)
 
-//query selector
+todosOsPs.forEach((texto) => console.log(texto.textContent.toUpperCase()))
 
-const mesmoTitulo = document.querySelector('#titulo')
-console.log(mesmoTitulo)
+//manipulação dentro do javascript
 
-const todosOsParagrafos = document.querySelectorAll('.texto')
-console.log(todosOsParagrafos)
-
-todosOsParagrafos.forEach((texto) => console.log(texto.textContent.toUpperCase()))
-
-//manipulação
-
-const textoAlterado = todosOsParagrafos[0].textContent
+const textoAlterado = todosOsPs[0].textContent
 console.log(textoAlterado)
 
-todosOsParagrafos[4].innerHTML = textoAlterado
+todosOsPs[5].innerHTML = "Hello World JavaScript"
 
-todosOsParagrafos[3].classList.add('outra-classe')
+todosOsPs[2].style.backgroundColor = 'aquamarine'
 
-todosOsParagrafos[3].classList.remove('texto')
+todosOsPs[3].classList.add('textp')
+todosOsPs[3].classList.remove('texto')
 
 titulo.remove()
 
-todosOsParagrafos[0].remove()
+//Events de click
 
-//eventos
+const button = document.getElementById('button')
+button.addEventListener('click', () => {
+    console.log('TEstando Botão sendo clicado')
+})
 
-const botao = document.getElementById('botao')
-
-botao.addEventListener('click', function(){
-    todosOsParagrafos[2].style.backgroundColor = 'red'
+button.addEventListener('click', function(){
+    todosOsPs[2].style.backgroundColor = 'red'
 })
