@@ -164,7 +164,7 @@ const calculadora = {
 
 const jsonCalc = JSON.stringify(calculadora)
 console.log(jsonCalc)
-*/
+
 //estruturas, métodos de listas, funções
 
 const n = 100
@@ -236,3 +236,132 @@ numerosGrandes.forEach(function(numero){
 console.log(numerosGrandes.reduce(function(total,numero){
     return parseInt(total)+parseInt(numero)
 }))
+
+
+
+//funções
+
+function minhaFuncao(){
+    console.log('Estou dentro da minha função.')
+}
+
+minhaFuncao()
+
+const funcao = function minhaFuncao(nome, sobrenome){
+    console.log(typeof nome)
+    return (`${nome} ${sobrenome}`)
+}
+
+const nome = 'Victor'
+const sobrenome = 'Vieira'
+console.log(funcao(nome, sobrenome))
+minhaFuncao(10,20)
+
+console.log(typeof funcao)
+
+//arrow functions - funções flecha
+const soma = (a,b) => a+b
+
+console.log(soma(5,3))
+
+const lista = ['esse cara é maior','b','c','d']
+
+console.log(lista.map(elemento => elemento.length))
+
+//closures - fechametos
+
+let x = 10
+
+function fora(){
+    //não é uma clousure
+    function somarXMais5(){
+        return x+5
+    }
+    return somarXMais5()
+}
+console.log(fora())
+
+function fora(){
+    let x = 7
+    function somarXMais5(){
+        return x+5
+    }
+    return somarXMais5()
+}
+console.log(fora())
+
+const fora = () => ((x=7), ()=>x+5)  ()
+
+*/
+
+//Orientação a Objetos
+
+class Produto {
+    constructor(nome, preco) {
+        this.nome = nome
+        this.preco = preco
+    }
+    detalhesDoProduto() {
+        return `O preço do produto ${this.nome} é R$ ${this.preco}.`
+    }
+}
+
+const oculos = new Produto('óculos', 19.90)
+
+
+//herança
+
+class ProdutoComTamanho extends Produto {
+    constructor(nome, preco, tamanho) {
+        super(nome, preco)
+        this.tamanho = tamanho
+    }
+
+    outraMensagem(adjetivo) {
+        return `O produto ${this.nome} é ${adjetivo} demais.`
+    }
+}
+
+const camisa = new ProdutoComTamanho('camisa', 26.99, 'M')
+console.log(camisa.detalhesDoProduto())
+console.log(camisa.outraMensagem('bom'))
+
+//console.log(oculos.outraMensagem())
+
+//DOM - Document Object Model
+
+const titulo = document.getElementById('titulo')
+console.log(titulo)
+
+//query selector
+
+const mesmoTitulo = document.querySelector('#titulo')
+console.log(mesmoTitulo)
+
+const todosOsParagrafos = document.querySelectorAll('.texto')
+console.log(todosOsParagrafos)
+
+todosOsParagrafos.forEach((texto) => console.log(texto.textContent.toUpperCase()))
+
+//manipulação
+
+const textoAlterado = todosOsParagrafos[0].textContent
+console.log(textoAlterado)
+
+todosOsParagrafos[4].innerHTML = textoAlterado
+
+todosOsParagrafos[3].classList.add('outra-classe')
+
+todosOsParagrafos[3].classList.remove('texto')
+
+titulo.remove()
+
+todosOsParagrafos[0].remove()
+
+//eventos
+
+const botao = document.getElementById('botao')
+
+botao.addEventListener('click', function () {
+    todosOsParagrafos[2].style.backgroundColor = 'red'
+})
