@@ -297,11 +297,11 @@ const fora = () => ((x=7), ()=>x+5)  ()
 //Orientação a Objetos
 
 class Produto {
-    constructor(nome, preco){
+    constructor(nome, preco) {
         this.nome = nome
         this.preco = preco
     }
-    detalhesDoProduto(){
+    detalhesDoProduto() {
         return `O preço do produto ${this.nome} é R$ ${this.preco}.`
     }
 }
@@ -311,13 +311,13 @@ const oculos = new Produto('óculos', 19.90)
 
 //herança
 
-class ProdutoComTamanho extends Produto{
-    constructor(nome, preco, tamanho){
+class ProdutoComTamanho extends Produto {
+    constructor(nome, preco, tamanho) {
         super(nome, preco)
         this.tamanho = tamanho
     }
 
-    outraMensagem(adjetivo){
+    outraMensagem(adjetivo) {
         return `O produto ${this.nome} é ${adjetivo} demais.`
     }
 }
@@ -362,6 +362,6 @@ todosOsParagrafos[0].remove()
 
 const botao = document.getElementById('botao')
 
-botao.addEventListener('click', function(){
+botao.addEventListener('click', function () {
     todosOsParagrafos[2].style.backgroundColor = 'red'
 })
