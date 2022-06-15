@@ -292,7 +292,6 @@ console.log(fora())
 
 const fora = () => ((x=7), ()=>x+5)  ()
 
-*/
 
 //Orientação a Objetos
 
@@ -365,3 +364,102 @@ const botao = document.getElementById('botao')
 botao.addEventListener('click', function () {
     todosOsParagrafos[2].style.backgroundColor = 'red'
 })
+
+
+//javascript  sincrono - é sincrono porque não utiliza nenhuma funçao await
+
+function somar() {
+    const resultado = 1+1
+    if(resultado ===2) sucesso()
+    else erro()
+}
+
+function sucesso( ) {
+    console.log('sucesso! a soma foi 2.')
+}
+
+function erro() {
+    console.log('A soma não foi 2. Alguma coisa deu errado...')
+}
+
+console.log('teste')
+somar()
+console.log('teste')
+console.log('teste')
+console.log('teste')
+
+//tranformar função sincrona em assincrona
+function somar(sucesso, erro) {
+    const resultado = 1+1
+    if(resultado === 2 ) sucesso()
+    else erro()
+}
+console.log('teste')
+somar(()=> {console.log ('sucesso! a soma foi 2.')}, ()=>  {console.log ('A soma não foi 2. Alguma coisa deu errado...')})
+console.log('teste')
+console.log('teste')
+console.log('teste')
+
+
+//promisses são classes em javascript. métodod: then e catch
+
+const p = new Promise((resolve, reject) => {
+    const resultado =  1 + 4;
+    if(resultado ===2) resolve('sucesso! a soma foi 2.')
+    else reject('A soma não foi 2. Alguma coisa deu errado...')
+
+})
+console.log(p)
+p
+.then((mensagem) => {console.log('Isso é o que está dentro do then ' + mensagem)})
+.catch((mensagem) => {console.log('Isso é o que está dentro do catch ' + mensagem)})
+
+console.log(p)
+console.log('teste')
+
+const melhorProgramador =  'fabi'
+function quemEhOMelhor(callback, callbackErro) {
+    if(melhorProgramador === 'Cleyci'){
+        callback({
+            nome: melhorProgramador,
+            mensagem: ' humildemente é a melhor!'
+        });
+    }else{
+        callbackErro({
+            mensagem01: 'você é uma iludida...',
+            mensagem02: '? sério?',
+
+        });
+    }
+}
+
+quemEhOMelhor(
+    (resultado) => {console.log(resultado.nome + resultado.mensagem)},
+    (erro) => {console.log((erro.mensagem01) + melhorProgramador + (erro.mensagem02))})
+
+
+
+//transformando callback em promisse
+
+const melhorProgramador =  'fabi'
+function quemEhOMelhor() {
+    return new Promise((resolve, reject) =>{
+        if(melhorProgramador === 'Cleyci'){
+            resolve({
+                nome: melhorProgramador,
+                mensagem: ' humildemente é a melhor!'
+            });
+        }else{
+            reject({
+                mensagem01: 'você é uma iludida...',
+                mensagem02: '? sério?',
+
+            });
+        }
+    })
+}
+console.log(quemEhOMelhor())
+quemEhOMelhor()
+    .then((resultado) => {console.log(resultado.nome + resultado.mensagem)})
+    .catch((erro) => {console.log((erro.mensagem01) + melhorProgramador + (erro.mensagem02))})
+*/
