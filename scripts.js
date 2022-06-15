@@ -296,72 +296,154 @@ const fora = () => ((x=7), ()=>x+5)  ()
 
 //Orientação a Objetos
 
-class Produto {
-    constructor(nome, preco){
-        this.nome = nome
-        this.preco = preco
-    }
-    detalhesDoProduto(){
-        return `O preço do produto ${this.nome} é R$ ${this.preco}.`
-    }
+// class Produto {
+//     constructor(nome, preco){
+//         this.nome = nome
+//         this.preco = preco
+//     }
+//     detalhesDoProduto(){
+//         return `O preço do produto ${this.nome} é R$ ${this.preco}.`
+//     }
+// }
+
+// const oculos = new Produto('óculos', 19.90)
+
+
+// //herança
+
+// class ProdutoComTamanho extends Produto{
+//     constructor(nome, preco, tamanho){
+//         super(nome, preco)
+//         this.tamanho = tamanho
+//     }
+
+//     outraMensagem(adjetivo){
+//         return `O produto ${this.nome} é ${adjetivo} demais.`
+//     }
+// }
+
+// const camisa = new ProdutoComTamanho('camisa', 26.99, 'M')
+// console.log(camisa.detalhesDoProduto())
+// console.log(camisa.outraMensagem('bom'))
+
+// //console.log(oculos.outraMensagem())
+
+// //DOM - Document Object Model
+
+// const titulo = document.getElementById('titulo')
+// console.log(titulo)
+
+// //query selector
+
+// const mesmoTitulo = document.querySelector('#titulo')
+// console.log(mesmoTitulo)
+
+// const todosOsParagrafos = document.querySelectorAll('.texto')
+// console.log(todosOsParagrafos)
+
+// todosOsParagrafos.forEach((texto) => console.log(texto.textContent.toUpperCase()))
+
+// //manipulação
+
+// const textoAlterado = todosOsParagrafos[0].textContent
+// console.log(textoAlterado)
+
+// todosOsParagrafos[4].innerHTML = textoAlterado
+
+// todosOsParagrafos[3].classList.add('outra-classe')
+
+// todosOsParagrafos[3].classList.remove('texto')
+
+// titulo.remove()
+
+// todosOsParagrafos[0].remove()
+
+// //eventos
+
+// const botao = document.getElementById('botao')
+
+// botao.addEventListener('click', function(){
+//     todosOsParagrafos[2].style.backgroundColor = 'red'
+// })
+
+//JavaScript síncrono
+
+// function somar() {
+//     const resultado = 1 + 1
+//     if (resultado === 2) sucesso()
+//     else erro()
+// }
+
+// function sucesso() {
+//     console.log('Sucesso! A soma foi 2.')
+// }
+
+// function erro() {
+//     console.log('Erro! Algo de errado não está certo.')
+// }
+
+// somar() //existe ordem na execução dos passos
+
+//Promises são classes em JavaScript. Métodos: then e catch
+
+// const p = new Promise((resolve, reject) => {
+//     const resultado = 1 + 1
+//     if (resultado === 2) resolve('Sucesso! A soma foi 2.')
+//     else reject('Erro! Algo de errado não está certo.')
+// })
+
+// p
+//     .then((mensagem) => {console.log('Isso é o que está dento do then: ' + mensagem)})
+//     .catch((mensagem) => {console.log('Isso é o que está dento do catch: ' + mensagem)})
+
+// console.log(p)
+// console.log('Teste')
+
+//Callback
+
+// const melhorProgramador = 'Paulo'
+
+// function quemEhOMelhor(calback, callbackErro) {
+//     if(melhorProgramador==='André'){
+//         calback({
+//             nome: melhorProgramador,
+//             mensagem: ', o melior!'
+//         })
+//     } else {
+//         callbackErro({
+//             mensagem01: 'Zulivre... ',
+//             mensagem02: '? Sério?'
+//         })
+//     }
+// }
+
+// quemEhOMelhor(
+//     (resultado) => {console.log(resultado.nome + resultado.mensagem)},
+//     (erro) => {console.log(erro.mensagem01 + melhorProgramador + erro.mensagem02)}
+// )
+
+//transformando callback para promise
+
+const melhorProgramador = 'Paulo'
+
+function quemEhOMelhor() {
+    return new Promise((resolve, reject) => {
+        if(melhorProgramador === 'André'){
+            resolve({
+                nome: melhorProgramador,
+                mensagem: ' eh o melior!'
+            })
+        } else {
+            reject({
+                mensagem01: 'Zulivre... ',
+                mensagem02: '? Sério?'
+            })
+        }
+    })
 }
 
-const oculos = new Produto('óculos', 19.90)
+console.log(quemEhOMelhor())
 
-
-//herança
-
-class ProdutoComTamanho extends Produto{
-    constructor(nome, preco, tamanho){
-        super(nome, preco)
-        this.tamanho = tamanho
-    }
-
-    outraMensagem(adjetivo){
-        return `O produto ${this.nome} é ${adjetivo} demais.`
-    }
-}
-
-const camisa = new ProdutoComTamanho('camisa', 26.99, 'M')
-console.log(camisa.detalhesDoProduto())
-console.log(camisa.outraMensagem('bom'))
-
-//console.log(oculos.outraMensagem())
-
-//DOM - Document Object Model
-
-const titulo = document.getElementById('titulo')
-console.log(titulo)
-
-//query selector
-
-const mesmoTitulo = document.querySelector('#titulo')
-console.log(mesmoTitulo)
-
-const todosOsParagrafos = document.querySelectorAll('.texto')
-console.log(todosOsParagrafos)
-
-todosOsParagrafos.forEach((texto) => console.log(texto.textContent.toUpperCase()))
-
-//manipulação
-
-const textoAlterado = todosOsParagrafos[0].textContent
-console.log(textoAlterado)
-
-todosOsParagrafos[4].innerHTML = textoAlterado
-
-todosOsParagrafos[3].classList.add('outra-classe')
-
-todosOsParagrafos[3].classList.remove('texto')
-
-titulo.remove()
-
-todosOsParagrafos[0].remove()
-
-//eventos
-
-const botao = document.getElementById('botao')
-
-botao.addEventListener('click', function(){
-    todosOsParagrafos[2].style.backgroundColor = 'red'
-})
+quemEhOMelhor()
+    .then((resultado) => {console.log(resultado.nome + resultado.mensagem)})
+    .catch((erro) => {console.log(erro.mensagem01 + melhorProgramador + erro.mensagem02)})
