@@ -29,8 +29,21 @@ console.log('Terceiro texto.')
 
 */
 
+const { set } = require("express/lib/application")
+
 // JavaScript assíncrono
 
 setTimeout(() => console.log('Testando uma mensagem exibida após 3 segundos.'), 3000)
 
 console.log('Outra mensagem.')
+
+function funcao() {
+  const data = new Date
+  const string = `${data.getHours()}:${data.getMinutes()}:${data.getSeconds()}`
+}
+
+setTimeout(funcao, 5000)
+setTimeout(funcao, 5000)
+setTimeout(funcao, 5000)
+
+setInterval(funcao, 5000)
