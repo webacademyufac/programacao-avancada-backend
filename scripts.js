@@ -237,7 +237,7 @@ console.log(numerosGrandes.reduce(function(total,numero){
     return parseInt(total)+parseInt(numero)
 }))
 
-*/
+
 
 //funções
 
@@ -268,7 +268,7 @@ const lista = ['esse cara é maior','b','c','d']
 
 console.log(lista.map(elemento => elemento.length))
 
-//clousures - fechametos
+//closures - fechametos
 
 let x = 10
 
@@ -291,3 +291,162 @@ function fora(){
 console.log(fora())
 
 const fora = () => ((x=7), ()=>x+5)  ()
+
+*/
+
+//Orientação a Objetos
+/* 
+class Produto {
+    constructor(nome, preco) {
+        this.nome = nome
+        this.preco = preco
+    }
+    detalhesDoProduto() {
+        return `O preço do produto ${this.nome} é R$ ${this.preco}.`
+    }
+}
+
+const oculos = new Produto('óculos', 19.90)
+
+
+//herança
+
+class ProdutoComTamanho extends Produto {
+    constructor(nome, preco, tamanho) {
+        super(nome, preco)
+        this.tamanho = tamanho
+    }
+
+    outraMensagem(adjetivo) {
+        return `O produto ${this.nome} é ${adjetivo} demais.`
+    }
+}
+
+const camisa = new ProdutoComTamanho('camisa', 26.99, 'M')
+console.log(camisa.detalhesDoProduto())
+console.log(camisa.outraMensagem('bom'))
+
+//console.log(oculos.outraMensagem())
+
+//DOM - Document Object Model
+
+const titulo = document.getElementById('titulo')
+console.log(titulo)
+
+//query selector
+
+const mesmoTitulo = document.querySelector('#titulo')
+console.log(mesmoTitulo)
+
+const todosOsParagrafos = document.querySelectorAll('.texto')
+console.log(todosOsParagrafos)
+
+todosOsParagrafos.forEach((texto) => console.log(texto.textContent.toUpperCase()))
+
+//manipulação
+
+const textoAlterado = todosOsParagrafos[0].textContent
+console.log(textoAlterado)
+
+todosOsParagrafos[4].innerHTML = textoAlterado
+
+todosOsParagrafos[3].classList.add('outra-classe')
+
+todosOsParagrafos[3].classList.remove('texto')
+
+titulo.remove()
+
+todosOsParagrafos[0].remove()
+
+//eventos
+
+const botao = document.getElementById('botao')
+
+botao.addEventListener('click', function () {
+    todosOsParagrafos[2].style.backgroundColor = 'red'
+})
+ */
+// JavaSctipt síncrono
+/* 
+function somar() {
+    const resultado = 1 + 1
+    if (resultado === 2) sucesso()
+    else erro()
+}
+
+function sucesso() {
+    console.log('Sucesso! A soma foi 2.')
+}
+
+function erro() {
+    console.log('A soma não foi 2. Alguma coisa deu errado...')
+}
+
+somar() */
+
+// Promises são classes em JavaScript. Métodos: then e catch.
+/* 
+const p = new Promise((resolve, reject) => {
+    const resultado = 1 + 1
+    if (resultado === 2) resolve('Sucesso! A soma foi 2.')
+    else reject('A soma não foi 2. Alguma coisa deu errado...')
+})
+
+p
+    .then((mensagem) => {console.log('Isso é o que está dentro do then: ' + mensagem)})
+    .catch((mensagem) => {console.log('Isso é o que está dentro do catch: ' + mensagem)})
+
+console.log(p)
+
+console.log('Teste')
+ 
+
+// callback
+
+const melhorProgramador = 'Paulo'
+
+function quemEhOMelhor (callback , calbackErro) {
+    if(melhorProgramador==='Victor'){
+        callback({
+            nome: melhorProgramador,
+            mensagem: ' humildemente é o melhor!'
+        })
+    } else {
+        calbackErro({
+            mensagem01: 'Tá errado...',
+            mensagem02: '? Sério?'
+        })
+    }
+}
+
+quemEhOMelhor(
+    (resultado) => {console.log(resultado.nome + resultado.mensagem)},
+    (erro) => {console.log(erro.mensagem01 + melhorProgramador + erro.mensagem02)}
+)
+*/
+// transformando de callback para promise
+
+const melhorProgramador = 'Paulo Sampaio'
+
+function quemEhOMelhor() {
+    return new Promise((resolve, reject) => {
+        if (melhorProgramador === 'Victor') {
+            resolve({
+                nome: melhorProgramador,
+                mensagem: ' humildemente é o melhor!'
+            })
+        } else {
+            reject({
+                mensagem01: 'Tá errado...',
+                mensagem02: '? Sério?'
+            })
+        }
+    })
+}
+
+console.log(quemEhOMelhor())
+
+quemEhOMelhor()
+    .then((resultado) => { console.log(resultado.nome + resultado.mensagem) })
+    .catch((erro) => { console.log(erro.mensagem01 + melhorProgramador + erro.mensagem02) })
+
