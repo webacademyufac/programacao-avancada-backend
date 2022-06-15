@@ -43,6 +43,7 @@ function funcao() {
   const data = new Date
   const string = `${data.getHours()}:${data.getMinutes()}:${data.getSeconds()}`
   console.log(string)
+  //setTimeout(funcao, 5000)
 }
 
 setTimeout(funcao, 5000)
