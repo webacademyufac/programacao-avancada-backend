@@ -1,0 +1,8 @@
+function mostraData(){
+  const data = new Date();
+  console.log('Hoje é: ' + data.getDay() + ' Hora: ' + data.getHours() + ' Minutos: ' + data.getMinutes() + ' Segundos: ' + data.getSeconds())
+}
+
+setInterval(mostraData, 5000)
+
+resolução do desafio - Kauã 
