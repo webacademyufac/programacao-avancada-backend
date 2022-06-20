@@ -294,7 +294,7 @@ const fora = () => ((x=7), ()=>x+5)  ()
 
 
 //Orientação a Objetos
-
+/* 
 class Produto {
     constructor(nome, preco) {
         this.nome = nome
@@ -364,6 +364,7 @@ const botao = document.getElementById('botao')
 botao.addEventListener('click', function () {
     todosOsParagrafos[2].style.backgroundColor = 'red'
 })
+<<<<<<< HEAD
 
 
 //javascript  sincrono - é sincrono porque não utiliza nenhuma funçao await
@@ -376,12 +377,26 @@ function somar() {
 
 function sucesso( ) {
     console.log('sucesso! a soma foi 2.')
+=======
+ */
+// JavaSctipt síncrono
+/* 
+function somar() {
+    const resultado = 1 + 1
+    if (resultado === 2) sucesso()
+    else erro()
+}
+
+function sucesso() {
+    console.log('Sucesso! A soma foi 2.')
+>>>>>>> c1fae0c299b077828ac16b7bd891110ec5a5c527
 }
 
 function erro() {
     console.log('A soma não foi 2. Alguma coisa deu errado...')
 }
 
+<<<<<<< HEAD
 console.log('teste')
 somar()
 console.log('teste')
@@ -430,11 +445,48 @@ function quemEhOMelhor(callback, callbackErro) {
             mensagem02: '? sério?',
 
         });
+=======
+somar() */
+
+// Promises são classes em JavaScript. Métodos: then e catch.
+/* 
+const p = new Promise((resolve, reject) => {
+    const resultado = 1 + 1
+    if (resultado === 2) resolve('Sucesso! A soma foi 2.')
+    else reject('A soma não foi 2. Alguma coisa deu errado...')
+})
+
+p
+    .then((mensagem) => {console.log('Isso é o que está dentro do then: ' + mensagem)})
+    .catch((mensagem) => {console.log('Isso é o que está dentro do catch: ' + mensagem)})
+
+console.log(p)
+
+console.log('Teste')
+ 
+
+// callback
+
+const melhorProgramador = 'Paulo'
+
+function quemEhOMelhor (callback , calbackErro) {
+    if(melhorProgramador==='Victor'){
+        callback({
+            nome: melhorProgramador,
+            mensagem: ' humildemente é o melhor!'
+        })
+    } else {
+        calbackErro({
+            mensagem01: 'Tá errado...',
+            mensagem02: '? Sério?'
+        })
+>>>>>>> c1fae0c299b077828ac16b7bd891110ec5a5c527
     }
 }
 
 quemEhOMelhor(
     (resultado) => {console.log(resultado.nome + resultado.mensagem)},
+<<<<<<< HEAD
     (erro) => {console.log((erro.mensagem01) + melhorProgramador + (erro.mensagem02))})
 
 
@@ -463,3 +515,34 @@ quemEhOMelhor()
     .then((resultado) => {console.log(resultado.nome + resultado.mensagem)})
     .catch((erro) => {console.log((erro.mensagem01) + melhorProgramador + (erro.mensagem02))})
 */
+=======
+    (erro) => {console.log(erro.mensagem01 + melhorProgramador + erro.mensagem02)}
+)
+*/
+// transformando de callback para promise
+
+const melhorProgramador = 'Paulo Sampaio'
+
+function quemEhOMelhor() {
+    return new Promise((resolve, reject) => {
+        if (melhorProgramador === 'Victor') {
+            resolve({
+                nome: melhorProgramador,
+                mensagem: ' humildemente é o melhor!'
+            })
+        } else {
+            reject({
+                mensagem01: 'Tá errado...',
+                mensagem02: '? Sério?'
+            })
+        }
+    })
+}
+
+console.log(quemEhOMelhor())
+
+quemEhOMelhor()
+    .then((resultado) => { console.log(resultado.nome + resultado.mensagem) })
+    .catch((erro) => { console.log(erro.mensagem01 + melhorProgramador + erro.mensagem02) })
+
+>>>>>>> c1fae0c299b077828ac16b7bd891110ec5a5c527
