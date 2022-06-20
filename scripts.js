@@ -292,7 +292,7 @@ console.log(fora())
 
 const fora = () => ((x=7), ()=>x+5)  ()
 
-*/
+
 
 //Orientação a Objetos
 
@@ -365,3 +365,65 @@ const botao = document.getElementById('botao')
 botao.addEventListener('click', function(){
     todosOsParagrafos[2].style.backgroundColor = 'red'
 })
+
+// JavaScript sincrono 
+
+function somar(){
+      
+    const resultado = 1 + 1
+    if(resultado === 2)sucesso()
+    else erro()
+}
+
+function sucesso(){
+     console.log('sucesso')
+}
+
+function erro(){
+
+    console.log('erro')
+}
+
+
+somar()
+
+
+//promise são classe em javascript.
+
+const p = new Promise((resolve, reject)=>{
+    const resultado = 1 + 1
+    if(resultado === 2)resolve('Sucesso.a soma foi 2')
+    else reject("Rejeitado.erro")
+})
+
+p
+   .then((mensagem) => (console.log('isto q ta dentro do then :' + mensagem)))
+   .catch((mensagem) => (console.log('isto q ta dentro do catch :' + mensagem)))
+
+console.log(p)
+
+*/
+//callback usando promise
+
+const melhorProgamador = "Guilherme"
+
+function quemehomelhor(){
+    return new Promise((resolve,reject) => { 
+    if(melhorProgamador === 'Guilherme'){
+        resolve({
+            nome: melhorProgamador,
+            mensagem: ' humildemente é o melhor'
+        })
+    } else{
+        reject({
+            mensagem01: 'Ta errado...',
+            mensagem02: '? Serio'
+        })
+    }
+})
+}
+
+quemehomelhor()
+    .then((resultado) => {console.log(resultado.nome + resultado.mensagem)})
+    .catch((erro) => {console.log(erro.mensagem01 + melhorProgamador + erro.mensagem02)})
+
