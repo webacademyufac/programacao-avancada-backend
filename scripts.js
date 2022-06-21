@@ -1,22 +1,43 @@
-/*console.log("Hello, world, Javascript!")
+/* 
+O código deste documento serve como material de consulta/estudo sobre fundamentos de programação em JavaScript e foi desenvolvido durante a disciplina de Programação Avançada Backend da primeira turma do WebAcademy.
+ */
 
-//variáveis
-var x = 10 //number
-//formas mais convenientes de declarar variáveis
+//==============================================
+
+// O objeto console permite acessar métodos que exibem conteúdo no console, a partir da inspeção das páginas no navegador.
+// Strings em JS podem ser escritas entre aspas simples ou duplas.
+// Não é necessário ; para encerrar instruções.
+console.log("Hello, world, Javascript!")
+
+//==============================================
+
+// Variáveis
+// Em virtude da tipagem dinâmica, não é necessário especificar tipo de variáveis em JS. Os tipos são entendidos pela própria linguagem na atribuição dos valores.
+// Declarando variável de escopo global.
+var x = 10 
+// let e const são formas mais modernas e convenientes de declarar variáveis.
+// let carrega informação de escopo, ou seja, pode existir somente dentro de um bloco.
 let y = 50
+// const armazena constantes, ou seja, valores que não podem ser alterados durante a execução.
 const z = "''"
 
-y = 20
+// Alterando o valor da variável y de inteiro para string.
+y = 'testando...'
 console.log(y)
 
+// Estruturas de seleção são abordadas em seção específica do código. Destaque na estrutura abaixo para o fato de que existem diferentes maneiras de testar condições em JS.
 if(1){
+    // A variável y declarada dentro do bloco if possui escopo local, ou seja, mesmo que tenha o mesmo nome, é diferente da que foi declarada anteriormente pois está em um bloco de código mais interno e só existe dentro dele.
     let y = 15
     console.log(y)
 }
 
+// A instrução a seguir exibirá o texto da variável global y.
 console.log(y)
 
-//tipos
+//==============================================
+
+//Tipos
 
 const nome = "Victor"
 console.log(nome)
@@ -75,6 +96,7 @@ console.log(nomeMaiusculo[0])
 console.log(nomeMaiusculo[nomeMaiusculo.length-1])
 console.log(nomeMaiusculo.slice(0,6))
 
+/*
 //arrays, vetores, listas
 */
 //const lista = ['a','b','c','d','e']
@@ -450,7 +472,6 @@ quemEhOMelhor()
     .then((resultado) => { console.log(resultado.nome + resultado.mensagem) })
     .catch((erro) => { console.log(erro.mensagem01 + melhorProgramador + erro.mensagem02) })
 
-*/
 
 fetch('http://jsonplaceholder.typicode.com/users') // Objeto do JavaScript (ES6) que funciona como uma Promise e trabalha requisições e respostas HTTP.
     .then((resp) => resp.json()) // Recebendo os dados e convertendo para um JSON.
@@ -464,3 +485,6 @@ fetch('http://jsonplaceholder.typicode.com/users') // Objeto do JavaScript (ES6)
     .catch((error) => {
         console.log('Algo não deu certo: ' + error)
     })
+
+
+*/
