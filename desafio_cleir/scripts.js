@@ -16,6 +16,7 @@ fetch('http://jsonplaceholder.typicode.com/users')
       return response.json()
     })
     .then(json => {
+        // cria as variaves da tabela 
         let table = document.getElementById("tabela_lista").getElementsByTagName('tbody')[0];
         let row =''
         let cel1 =''
@@ -26,6 +27,7 @@ fetch('http://jsonplaceholder.typicode.com/users')
         let cel6 =''
         let cel7 =''
             console.log(table)
+            // insere os dados na tabela 
         json.map((item, index) => {
             row = table.insertRow(0);
             cel1 = row.insertCell(0)
