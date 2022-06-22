@@ -11,6 +11,8 @@ console.log("Hello, world, Javascript!")
 
 //==============================================
 
+/*
+
 // Variáveis
 // Em virtude da tipagem dinâmica, não é necessário especificar tipo de variáveis em JS. Os tipos são entendidos pela própria linguagem na atribuição dos valores.
 // Declarando variável de escopo global.
@@ -96,7 +98,7 @@ console.log(nomeMaiusculo[0])
 console.log(nomeMaiusculo[nomeMaiusculo.length-1])
 console.log(nomeMaiusculo.slice(0,6))
 
-/*
+
 //arrays, vetores, listas
 */
 //const lista = ['a','b','c','d','e']
@@ -472,6 +474,8 @@ quemEhOMelhor()
     .then((resultado) => { console.log(resultado.nome + resultado.mensagem) })
     .catch((erro) => { console.log(erro.mensagem01 + melhorProgramador + erro.mensagem02) })
 
+*/
+
 
 fetch('http://jsonplaceholder.typicode.com/users') // Objeto do JavaScript (ES6) que funciona como uma Promise e trabalha requisições e respostas HTTP.
     .then((resp) => resp.json()) // Recebendo os dados e convertendo para um JSON.
@@ -487,4 +491,3 @@ fetch('http://jsonplaceholder.typicode.com/users') // Objeto do JavaScript (ES6)
     })
 
 
-*/
