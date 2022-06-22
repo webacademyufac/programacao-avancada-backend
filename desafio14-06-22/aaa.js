@@ -1,7 +1,7 @@
 
 //criando o metodo fetch ignorando as restrições CORS
 fetch ('http://jsonplaceholder.typicode.com/users', { method: 'GET' }, { mode: 'no-cors' })
-    .then(resposta => resposta.json())
+    .then(resp => resp.json())
     .then(json => carregarElementosHTML(json))
     .catch(err => console.log(err.message))
 
