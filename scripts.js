@@ -11,8 +11,6 @@ console.log("Hello, world, Javascript!")
 
 //==============================================
 
-/*
-
 // Variáveis
 // Em virtude da tipagem dinâmica, não é necessário especificar tipo de variáveis em JS. Os tipos são entendidos pela própria linguagem na atribuição dos valores.
 // Declarando variável de escopo global.
@@ -40,7 +38,7 @@ console.log(y)
 //==============================================
 
 //Tipos
-
+/*
 const nome = "Victor"
 console.log(nome)
 console.log(typeof nome)
@@ -100,9 +98,9 @@ console.log(nomeMaiusculo.slice(0,6))
 
 
 //arrays, vetores, listas
-*/
+
 //const lista = ['a','b','c','d','e']
-/*console.log(lista.length)
+console.log(lista.length)
 console.log(lista[2])
 console.log(typeof lista)
 lista[5] = 'f'
@@ -477,6 +475,7 @@ quemEhOMelhor()
 */
 
 
+// Resolução do desafio de 14 de junho: Desafio do feriadão: Crie um documento HTML com apenas um elemento ul. No documento em JavaScript, utilize fetch (é uma API nativa do ES6 para requisições HTTP através de Promises) para pegar o conteúdo da página http://jsonplaceholder.typicode.com/users. Em seguida, dentro do fetch, utilize um then para converter o conteúdo da página para um objeto JSON e outro then para mapear o vetor com os dados do objeto JSON, puxando o nome e sebrenome de cada dado para a lista no HTML. Não se esqueça de fazer o catch no fetch indicando erro, quando houver. Inicie suas pesquisas para resolver ao problema em https://www.devmedia.com.br/javascript-fetch/41206.
 fetch('http://jsonplaceholder.typicode.com/users') // Objeto do JavaScript (ES6) que funciona como uma Promise e trabalha requisições e respostas HTTP.
     .then((resp) => resp.json()) // Recebendo os dados e convertendo para um JSON.
     .then(function(dado){ // Recebendo os dados em um Array.
