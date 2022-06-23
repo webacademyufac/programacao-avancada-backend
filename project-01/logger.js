@@ -14,7 +14,6 @@ const emitter = new EventEmitter()
 
 //Rotina para escuta da chamada do "texto" 'log.'
 emitter.on('log' ,(mensage) => { 
-    console.log(mensage)
     fs.appendFile(path.join(__dirname , 'log.txt' ) , mensage , (err) => {
         if(err) throw err 
     })
