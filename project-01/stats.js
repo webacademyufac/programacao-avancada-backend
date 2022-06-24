@@ -43,12 +43,13 @@ setInterval(()=>{
     const freememory = parseInt((freemem() /1024) / 1024 )
     const totalmemory = parseInt((totalmem()/1024) / 1024 )
     const percents = (freememory/totalmemory)*100
+    const percentsUsage = ((totalmemory - freememory)/totalmemory)*100
 
     // Objeto stats que armazenao estado da memória com relação a quantos gb estão livres, qual o total e a porcentagem usada
     const stats = {
         free: `${freememory} MB`,
         total: `${totalmemory} MB`,
-        usage: `${((totalmemory - freememory)/totalmemory)*100}%`
+        usage: `${percentsUsage}%`
     }
     
     // Formatando a saída dos dados da memória para uma tabela.
