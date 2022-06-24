@@ -27,5 +27,7 @@ setInterval(() => {
     console.clear()
     console.log('------ MEMORY STATS ------')
     console.table(stats)
+
+    // Chamada da funçõ log que inicia o EventEmitter.
     log(JSON.stringify(stats)+'\n')
 }, 1000);

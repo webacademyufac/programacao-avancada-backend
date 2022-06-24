@@ -11,7 +11,7 @@ const fs = require('fs')
 // Importando o módulo path para tratar do caminho.
 const path = require('path')
 
-// Criadno o objeto do tipo EventEmitter.
+// Criando o objeto do tipo EventEmitter.
 const emitter = new EventEmitter()
 
 // Rotina para escuta da chamada do "texto" 'log'.
