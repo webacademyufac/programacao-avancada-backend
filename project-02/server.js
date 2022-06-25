@@ -1,3 +1,7 @@
+/* 
+Esse código cria um servidor a partir da utilização do módulo http. Está "sendo servida" uma página HTML.
+*/
+
 const http = require('http')
 const fs = require('fs')
 const path = require('path')
