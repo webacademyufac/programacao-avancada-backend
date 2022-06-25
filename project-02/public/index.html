@@ -1,20 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--  <link rel="stylesheet" href="style.css">-->  
-    <title>Meus links</title>
+    <title>Meus Links</title>
+    <script src="scripts.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
-    <form action="/">
-        <input type="text" placeholder="endereço web e url separados por vírgula ...">
-    </form>
+    <form id="favoritos">
+        <br>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Favoritos</label>
+          <input type="text" class="form-control" id="NomeUrl" aria-describedby="emailHelp" placeholder="Digite no formato: Nome do site , URL" >
+        </div>
+        <button type="submit" value="enviar" class="btn btn-primary">Salvar</button>
+      </form>
 
-    <ul>
-        <li>Endereços</li>
-    </ul>
- <!-- <script src="script.js"></script>  -->
+      <br>
+      <br>
+
+      <div class="list-group">
+
+        <a class="list-group-item list-group-item-action disabled" >Sites Salvos</a>
+        <a href="#" class="list-group-item list-group-item-action" class="listSite">EXEMPLO-1</a>
+        <a href="#" class="list-group-item list-group-item-action" class="listSite">EXEMPLO-2</a>
+        <a href="#" class="list-group-item list-group-item-action" class="listSite">EXEMPLO-3</a>
+        <a href="#" class="list-group-item list-group-item-action" class="listSite">EXEMPLO-4</a>
+
+      </div>
+
+
 </body>
 </html>
+
+
+<!-- Importando o bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
