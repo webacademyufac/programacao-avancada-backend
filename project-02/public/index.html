@@ -4,15 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js" defer></script>
     <title>Meus Links</title>
     
 </head>
 <body>
-    <form action="/">
-        <input type="text" placeholder="Digite o nome do endereço e a url, separados por vírgula...">
+    <div class="container">
+    <form class="form" action="/">
+        <input  type="text" placeholder="Digite o nome do endereço e a url.">
+        <div class="area-btn">
+            <button type="text" class="adiciona">Adiciona</button>
+            <button type="text" class="remove">Remove</button>
+        </div>
+     
+        <ul >
+            <li>Nunca mais esqueça um endereço!</li>
+        </ul>
+    
     </form>
-    <ul>
-        <li>Nunca mais esqueça um endereço!</li>
-    </ul>
+    
+    </div>
 </body>
 </html>
