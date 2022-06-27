@@ -3,7 +3,7 @@ const input = document.querySelector('input')
 const form = document.querySelector('form')
 
 function addElement({ name, url }) {
-    //...
+    document.querySelector("#links").insertAdjacentHTML("afterend", `<li>${name}: ${url}</li>`)
 }
 
 function removeElement(element) {

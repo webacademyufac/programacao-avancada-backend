@@ -12,14 +12,14 @@
 <body>
     <div class="container">
     <form class="form" action="/">
-        <input  type="text" placeholder="Digite o nome do endereço e a url.">
+        <input  type="text" placeholder="Ex: webacademy,http://www.webacademy.com">
         <div class="area-btn">
-            <button type="text" class="adiciona">Adiciona</button>
-            <button type="text" class="remove">Remove</button>
+            <button type="submit" class="adiciona" onclick="addElement">Adiciona</button>
+            <!-- <button type="text" id="remove" class="remove" onclick="removeElement">Remove</button> -->
         </div>
      
-        <ul >
-            <li>Nunca mais esqueça um endereço!</li>
+        <ul>
+            <li id="links">Nunca mais esqueça um endereço!</li>
         </ul>
     
     </form>
