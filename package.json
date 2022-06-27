@@ -1,0 +1,23 @@
+{
+  "name": "programacao-avancada-backend-do-kauagalvaodemacedo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paozinho24/programacao-avancada-backend-do-KauaGalvaoDeMacedo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Paozinho24/programacao-avancada-backend-do-KauaGalvaoDeMacedo/issues"
+  },
+  "homepage": "https://github.com/Paozinho24/programacao-avancada-backend-do-KauaGalvaoDeMacedo#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}

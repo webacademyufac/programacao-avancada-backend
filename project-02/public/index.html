@@ -5,38 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meus Links</title>
-    <script src="scripts.js" defer></script>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="scripts.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
+     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> 
+    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
+<br>
 <body>
-    <form id="favoritos">
-        <br>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Favoritos</label>
-          <input type="text" class="form-control" id="NomeUrl" aria-describedby="emailHelp" placeholder="Digite no formato: Nome do site , URL" >
-        </div>
-        <button type="submit" value="enviar" class="btn btn-primary">Salvar</button>
-      </form>
+    <div class="eita">
+        <div class="container" > 
+            <form action="/scripts.js" method="get" class="container">
+                <div class="mb-3">
+                    <br>
+                  <label for="enderecoSite" class="form-label" >Endereço do Site</label>
+                  <input type="text" class="form-control" id="enderecoSite" aria-describedby="endereco" 
+                  placeholder="Separe o nome do endereço por vírgula |  Ex: youtube , https: youtube.com.br">
+                  <div id="endereco" class="form-text">teste</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Adicionar</button>
+              </form>
+              <br>
+            </div>
+    </div>
+   <br><br>
+   <div class="eita2">
+    <h3 class="titulo1">Sites Salvos</h3>
 
-      <br>
-      <br>
+    <ul class="list-group" id="list" >
+        <li class="list-group-item" ><a href="http://youtube.com.br"> Youtube</a></li>
+      </ul>
 
-      <div class="list-group">
-
-        <a class="list-group-item list-group-item-action disabled" >Sites Salvos</a>
-        <a href="#" class="list-group-item list-group-item-action" class="listSite">EXEMPLO-1</a>
-        <a href="#" class="list-group-item list-group-item-action" class="listSite">EXEMPLO-2</a>
-        <a href="#" class="list-group-item list-group-item-action" class="listSite">EXEMPLO-3</a>
-        <a href="#" class="list-group-item list-group-item-action" class="listSite">EXEMPLO-4</a>
-
-      </div>
-
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" 
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" 
+    integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
 
 </body>
 </html>
-
-
-<!-- Importando o bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>

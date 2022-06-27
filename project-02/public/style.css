@@ -1,4 +1,22 @@
-.md-3{
-    width: 20px;
+/*  */
 
+.eita{
+    width: 690px;
+    height: auto;
+    margin: 20px auto auto;
+    background-color: rgb(136, 136, 135);
+    border-radius: 25px;
+}
+
+h3.titulo1{
+    font-size: large;
+
+    
+}
+
+.eita2{
+    width: 690px;
+    height: auto;
+    margin: 20px auto auto;
+    
 }

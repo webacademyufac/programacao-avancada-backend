@@ -2,15 +2,17 @@ const ul = document.querySelector('ul')
 const input = document.querySelector('input')
 const form = document.querySelector('form')
 
-const ListaSite = documente.querySelectorAll('.listSite') //tentando pegar os documentos do coisa 
-    console.log(ListaSite)
-
 function addElement({ name, url }) {
-   
-    let elementUl = document.createElement('a')
-    elementUl.innerHTML = `${name} | ${url}` 
+    let dadoNome, dadoUrl = ''
+    localStorage.setItem(dadoNome , name )
+    localStorage.setItem(dadoUrl , url)
+    console.log(localStorage.getItem(dadoNome))
+    var element = document.getElementById('list')
+    element.innerHTML = ` <li class="list-group-item" ><a href="${localStorage.getItem(dadoUrl)}"> ${localStorage.getItem(dadoNome)}</a></li>`
+
 
 }
+
 
 function removeElement(element) {
     //...
@@ -24,15 +26,18 @@ form.addEventListener('submit', (event) => {
     if (!value) 
         return alert('Preencha o campo!')
 
-    const [name, url] = value.split(',')
+    const [name, url] = value.split(', ')
+    
 
     if (!url) 
         return alert('O texto não está formatado da maneira correta.')
 
-    if (!http.test(url)) 
+    if (!/^https/.test(url)) 
         return alert('Digite a url da maneira correta.')
 
     addElement({ name, url })
 
+
     input.value = ''
 })
+
