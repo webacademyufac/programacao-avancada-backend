@@ -3,17 +3,26 @@ const input = document.querySelector('input')
 const form = document.querySelector('form')
 
 function addElement({ name, url }) {
-    document.querySelector("#links").insertAdjacentHTML("beforeend", `<li>${name}: ${url} <button type="button" class="remove" onclick="removeElement()">Remove</button> </li>`)
+    const li = document.createElement('li')
+    const apaga = document.createElement('button')
+    const site = document.createElement('span')
+    const link = document.createElement('a')
+    
+    site.innerHTML = name
+    link.innerHTML = url
+    link.href = url
+    apaga.innerHTML = 'Apagar'
+    apaga.onclick = () => removeElement(apaga)
+
+    li.append(site)
+    li.append(link)
+    li.append(apaga)
+    ul.append(li)
 }
 
-function removeElement() {
-    const list = document.getElementById("links");
-    list.removeChild(list.lastElementChild);
-
-    // const node = document.getElementById("#links");
-    // node.addEventListener('click', function handleClick(event){
-    //     node.remove()
-    // })
+function removeElement(element) {
+    if (confirm('Tem certeza que deseja remover o link?'))
+        element.parentNode.remove(element)
 }
 
 // Adicionando ao formulário um escutador de evento que atende ao "submit".

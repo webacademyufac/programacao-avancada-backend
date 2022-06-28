@@ -10,9 +10,9 @@ body {
   background-color: #cecece;
   border-radius: 20px;
   box-sizing: border-box;
-  height: 800px;
+  height: auto;
   padding: 20px;
-  width: 350px;
+  width: auto;
 }
 
 input {
