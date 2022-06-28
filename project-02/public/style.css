@@ -18,5 +18,28 @@ h3.titulo1{
     width: 690px;
     height: auto;
     margin: 20px auto auto;
+    padding: auto;
     
+}
+
+a.excluir{
+    background-color: rgb(229, 70, 70);
+    border-radius: 20px;
+    height: 20px;
+    width: 690px;
+
+}
+
+.btn-danger{
+    width: auto;
+    float:right;
+    margin: -7px;
+}
+
+ul{
+    list-style: none;
+}
+
+body{
+    display: flex;
 }
