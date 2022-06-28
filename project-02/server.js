@@ -1,21 +1,35 @@
 /* 
-Esse código cria um servidor a partir da utilização do módulo http. Está "sendo servida" uma página HTML.
+Esse código cria um servidor a partir da utilização do módulo http. Está sendo servido o HTML, o CSS e o JavaScript.
 */
 
 const http = require('http')
 const fs = require('fs')
 const path = require('path')
 
+// Método para criar o servidor local. Rodando na porta 5000.
 http.createServer((req, res) => {
 
-    if (req.url === '/')
-        fs.readFile(
-            path.join(__dirname, 'public', 'index.html'),
-            (err, content) => {
-                if (err) throw err
+    const file = req.url === '/' ? 'index.html' : req.url
 
-                res.end(content)
-            }
-        )
+    const filePath = path.join(__dirname, 'public', file)
+
+    console.log(file)
+
+    const extname = path.extname(filePath)
+
+    const allowedFileTypes = ['.html','.css','.js']
+
+    const allowed = allowedFileTypes.find(item => item == extname)
+
+    if(!allowed) return
+
+    fs.readFile(
+        filePath,
+        (err, content) => {
+            if (err) throw err
+
+            res.end(content)
+        }
+    )
 
 }).listen(5000, () => { console.log('Server is running.') })

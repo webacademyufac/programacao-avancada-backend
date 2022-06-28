@@ -3,11 +3,25 @@ const input = document.querySelector('input')
 const form = document.querySelector('form')
 
 function addElement({ name, url }) {
-    //...
+    const li = document.createElement('li')
+    const a = document.createElement("a")
+    const trash = document.createElement("span")
+
+    a.href = url
+    a.innerHTML = name
+    a.target = "_blank"
+
+    trash.innerHTML = "x"
+    trash.onclick = () => removeElement(trash)
+
+    li.append(a)
+    li.append(trash)
+    ul.append(li)
 }
 
 function removeElement(element) {
-    //...
+    if (confirm('Tem certeza que deseja deletar?'))
+        el.parentNode.remove()
 }
 
 form.addEventListener('submit', (event) => {
