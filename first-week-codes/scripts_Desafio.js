@@ -7,11 +7,13 @@ fetch('http://jsonplaceholder.typicode.com/users')
         console.log(data)
         for(i = 0; i<data.length; i++){
             vet.push(`<li>${data[i].name}</li>`)
+
             const filtrado = vet.join("")
+            
             document.getElementById('pessoas').innerHTML = filtrado          
          }         
     })
-    .then(response => {
+    .catch(response => {
         if (!response.ok) {
         return new Error('a requisiçao falhou')
         }
