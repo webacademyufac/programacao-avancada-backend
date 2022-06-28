@@ -9,18 +9,18 @@ const server = http.createServer((req, res) => {
     const file = req.url === '/' ? 'index.html' : req.url
 
     const filePath = path.join(__dirname, 'public', file)
-    
-    console.log(file)
 
     const extname = path.extname(filePath)
 
+    // Extensões de arquivos permitidos a serem lidos pelo servidor.
     const allowedFileTypes = ['.html','.css','.js']
 
-    const allowed = allowedFileTypes.find(item => extname)
+    // Variável que guarda os arquivos existentes.
+    const allowed = allowedFileTypes.find(item => item == extname)
 
     if(!allowed) return 
 
-    // Condição para apresentar o documento "index.html", que se encontra na pasta "public", no navegador quando o usuário estiver na raiz.
+    // Lendo arquivo a partir do caminho dado, e tratando o erro. Ao final, o conteúdo é mostrado.
     fs.readFile(
         filePath, (err, content) => {
             if (err) throw err

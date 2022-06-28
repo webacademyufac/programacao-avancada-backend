@@ -6,8 +6,8 @@ body {
   height: 100vh;
 }
 
-.form {
-  background-color: #cecece;
+form {
+  background-color: #f0f0f0;
   border-radius: 20px;
   box-sizing: border-box;
   height: auto;
@@ -29,12 +29,13 @@ input {
   box-sizing: border-box;
   color: #eee;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
   height: 30px;
-  margin-top: 38px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 30%;
   text-align: center;
-  width: 50%;
-  margin-left: 5px;
+  width: 35%;
 }
 
 .remove {
@@ -44,16 +45,12 @@ input {
   box-sizing: border-box;
   color: #eee;
   cursor: pointer;
-  font-size: 18px;
-  height: 30px;
-  margin-top: 38px;
+  font-size: 15px;
+  height: 25px;
+  margin-top: 30px;
   text-align: center;
-  width: 50%;
+  width: auto;
   margin-left: 5px;
-}
-
-.area-btn {
-  display: flex;
 }
 
 ul {
@@ -61,9 +58,4 @@ ul {
   display: inline;
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
-}
-
-li {
-  text-align: center;
-  padding-bottom: 5px;
 }

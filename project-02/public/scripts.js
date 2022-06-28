@@ -2,24 +2,12 @@ const ul = document.querySelector('ul')
 const input = document.querySelector('input')
 const form = document.querySelector('form')
 
+// Adiciona um elemento com o nome e url, inserindo também um botão para remoção do mesmo.
 function addElement({ name, url }) {
-    const li = document.createElement('li')
-    const apaga = document.createElement('button')
-    const site = document.createElement('span')
-    const link = document.createElement('a')
-    
-    site.innerHTML = name
-    link.innerHTML = url
-    link.href = url
-    apaga.innerHTML = 'Apagar'
-    apaga.onclick = () => removeElement(apaga)
-
-    li.append(site)
-    li.append(link)
-    li.append(apaga)
-    ul.append(li)
+    document.querySelector("#links").insertAdjacentHTML("beforeend", `<li>${name}: ${url} <button type="button" class="remove" onclick="removeElement(this)">Remover</button> </li>`)
 }
 
+// Função que remove um elemento da página html.
 function removeElement(element) {
     if (confirm('Tem certeza que deseja remover o link?'))
         element.parentNode.remove(element)
@@ -49,7 +37,7 @@ form.addEventListener('submit', (event) => {
     if (!/^http/.test(url))
         return alert('Digite a url da maneira correta.')
 
-    // Adiciona o elemento nome e url. 
+    // Chama a função de adicionar elemento, passando o nome e url passado pelo usuário. 
     addElement({ name, url })
 
     // Limpa o campo input após a inserção dos valores.
