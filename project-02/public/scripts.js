@@ -21,7 +21,7 @@ function addElement({ name, url }) {
 
 function removeElement(element) {
     if (confirm('Tem certeza que deseja deletar?'))
-        el.parentNode.remove()
+        element.parentNode.remove()
 }
 
 form.addEventListener('submit', (event) => {
