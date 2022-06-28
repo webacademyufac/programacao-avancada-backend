@@ -1,0 +1,24 @@
+{
+  "name": "programacao-avancada-backend",
+  "version": "1.0.0",
+  "description": "Repositório da disciplina Programação Avançada Back-end",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon project-02/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webacademyufac/programacao-avancada-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webacademyufac/programacao-avancada-backend/issues"
+  },
+  "homepage": "https://github.com/webacademyufac/programacao-avancada-backend#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}
