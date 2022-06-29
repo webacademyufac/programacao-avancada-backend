@@ -16,7 +16,7 @@ function addElement(name, url) {
     cel3 = row.insertCell(3)
     // escreve dentro da colunas da tabela
     cel0.innerHTML = e + 1
-    cel1.innerHTML = name
+    cel1.innerHTML = `<a href="${url}" target="_blank">${name}</a>`
     cel2.innerHTML = url
     cel3.innerHTML = `<button type="button" class="btn btn-danger btn-sm" onclick="removeElement(${e})"><i class="bi bi-trash"></i></button>`
 }
