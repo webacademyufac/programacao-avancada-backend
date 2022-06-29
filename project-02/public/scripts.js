@@ -4,7 +4,7 @@ const form = document.querySelector('form')
 
 // Adiciona um elemento com o nome e url, inserindo também um botão para remoção do mesmo.
 function addElement({ name, url }) {
-    document.querySelector("#links").insertAdjacentHTML("beforeend", `<li>${name}: ${url} <button type="button" class="remove" onclick="removeElement(this)">Remover</button> </li>`)
+    document.querySelector("#links").insertAdjacentHTML("beforeend", `<li>${name}: <a href="${url}">${url}</a> <button type="button" class="remove" onclick="removeElement(this)">Remover</button> </li>`)
 }
 
 // Função que remove um elemento da página html.
