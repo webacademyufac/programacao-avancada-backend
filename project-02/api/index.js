@@ -2,10 +2,7 @@ const http = require('http')
 const data = require('./urls.json')
 const URL = require('url')
 
-
-http.createServer((req, res) => {
-
-    
+http.createServer((req, res) => {    
 
     const { name, url, del } = URL.parse(req.url, true).query
     //Se não tiver nenhum valor em name e url mostra a string 'show'

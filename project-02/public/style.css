@@ -1,13 +1,13 @@
 body {
   align-items: center;
-  background-color: white;
+  background-color: #463D5E;
   display: flex;
   justify-content: center;
   height: 100vh;
 }
 
 form {
-  background-color: #f0f0f0;
+  background-color: #D4D1DD;
   border-radius: 20px;
   box-sizing: border-box;
   height: auto;
@@ -58,4 +58,13 @@ ul {
   display: inline;
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+#titulo {
+  text-align: center;
+  font-family: cursive;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: bold;
+  text-shadow: 1px 1px #463D5E;
 }
