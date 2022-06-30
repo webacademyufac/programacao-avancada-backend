@@ -1,20 +1,25 @@
+/*
+    Modulo de estudo da criaçao e consumo de api, onde há  url e nome relacionados e que devem
+    ser vinculados e inseridos em um banco de dados não relacional, consultado e modificado(excluido)
+*/
+
+// importaçoes dos modulos utilizadps
 const http = require('http')
 const data = require('./urls.json')
 const URL = require('url')
 const fs = require('fs')
 const path = require('path')
 
-
+// criação do server
 http.createServer((req, res) => {
     const {
         name,
         url,
         del
-    } = URL.parse(req.url, true).query
+    } = URL.parse(req.url, true).query //formado da query a ser utilizada no url no modelo:
     // http://localhost:3000/urls?name=Google&url=https://www.google.com&del=1
-    // console.log(URL.parse(req.url, true).query)
-    // console.log(name, url)
-
+    
+// escrever o json
     function writeFile(cb) {
         fs.writeFile(
             path.join(__dirname, 'urls.json'),
@@ -26,18 +31,18 @@ http.createServer((req, res) => {
         )
     }
 
-
-    if (!name || !url) {
-        // return res.end('show')
+//condicionais da query para realizar a requisição
+    if (!name || !url) { //caso algo esteja vazio
         return res.end(JSON.stringify(data))
     }
-    if (del) {
+    if (del) { //caso &del=1, para deletar 
         data.urls = data.urls.filter(item => item.url != url)
         writeFile(message => res.end(message))
         return data.urls
     }
+    // caso haja name e url para incluir
     data.urls.push({name, url})
     writeFile(message => res.end(message))
-    return data.urls
+    return data.urls//exibe o json
 
 }).listen(3000, () => console.log("server's runing"))
