@@ -13,7 +13,7 @@ const server = http.createServer((req, res) => {
     const extname = path.extname(filePath)
 
     // Extensões de arquivos permitidos a serem lidos pelo servidor.
-    const allowedFileTypes = ['.html','.css','.js']
+    const allowedFileTypes = ['.html','.css','.js', '.png']
 
     // Variável que guarda os arquivos existentes.
     const allowed = allowedFileTypes.find(item => item == extname)
