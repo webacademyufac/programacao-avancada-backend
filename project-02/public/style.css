@@ -1,18 +1,17 @@
 body {
   align-items: center;
-  background-color: #463D5E;
-  display: flex;
+  background-color: white;
   justify-content: center;
-  height: 100vh;
 }
 
 form {
-  background-color: #D4D1DD;
+  background-color: #f0f0f0;
   border-radius: 20px;
   box-sizing: border-box;
   height: auto;
   padding: 20px;
-  width: auto;
+  width: 800px;
+  margin: auto;
 }
 
 input {
@@ -22,49 +21,35 @@ input {
   border-radius: 10px;
 }
 
-.adiciona {
-  background-color: green;
-  border-radius: 12px;
-  border: 0;
-  box-sizing: border-box;
-  color: #eee;
-  cursor: pointer;
-  font-size: 16px;
-  height: 30px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  margin-left: 30%;
-  text-align: center;
-  width: 35%;
-}
-
 .remove {
   background-color: red;
   border-radius: 12px;
   border: 0;
-  box-sizing: border-box;
   color: #eee;
   cursor: pointer;
-  font-size: 15px;
-  height: 25px;
   margin-top: 30px;
+}
+
+.remove:hover {
+  transform: scale(1.1);
+}
+
+.titulo {
   text-align: center;
-  width: auto;
-  margin-left: 5px;
+  margin-right: 30px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 ul {
   list-style-type: none;
-  display: inline;
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#titulo {
-  text-align: center;
-  font-family: cursive;
-  font-size: 25px;
-  font-style: italic;
-  font-weight: bold;
-  text-shadow: 1px 1px #463D5E;
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
