@@ -8,10 +8,25 @@ http.createServer((req, res) => {
 
     const {name, url, del} = URL.parse(req.url,true).query
     
-    if(!name || !url)
+    if(!name || !url){
         return res.end(JSON.stringify(data))
-    if(del)
-        return res.end("delete")
-    return res.end("create")
+    }
+    if(del){
+        data.urls = data.urls.filter(item=> item.url != url)
+        return writeFile(message => res.end(message))
+    }
+    
+   data.urls.push({"name":name, "url":url})
+   return writeFile(message => res.end(message))
+
+
+    function writeFile(cp){
+        fs.writeFile(path.join(__dirname, 'urls.json'),
+        JSON.stringify(data,null,2),
+        err =>{
+            if(err) throw err
+            cp('operação realizada com sucesso')
+        })
+    }
 
 }).listen(3000, () => { console.log('api is running') })
