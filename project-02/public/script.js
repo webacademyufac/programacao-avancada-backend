@@ -2,6 +2,7 @@ const ul = document.querySelector('ul')
 const input = document.querySelector('#input')
 const form = document.querySelector('#form')
 
+// função para coleta de dados do backend 
 async function load() {    
 
     const res = await fetch('http://localhost:3000/')
@@ -12,11 +13,11 @@ async function load() {
 }
 load()
 
+// função cria o elemento <li> com o conteudo composto de um nome dentro de um <a> com o href dele sendo a url como valor 
 function addElement({
     name,
     url
 }) {
-
     const li = document.createElement('li')
     li.innerHTML = `<a target="_blank" href="${url}">${name} </a> <button onClick="removeElement(this)" class="remove">X</button>`
     li.classList.add("li-listener")
@@ -24,15 +25,17 @@ function addElement({
 
 }
 
+// função para remover pai do elemento clicado com todo seu conteudo
 function removeElement(element) {
     // console.log(element.parentNode)
 
     // element.parentNode.style['background'] = 'red'
-    element.parentNode.style['visibility'] = 'hidden'
+    // element.parentNode.style['visibility'] = 'hidden'
     element.parentNode.remove()
 
 }
 
+// "ouvinte" do botão enviar 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
@@ -53,7 +56,8 @@ form.addEventListener('submit', (event) => {
     if (/!^http/.test(url))
         return alert('Digite a url da maneira correta.')
 
-    console.log("add")
+    // console.log("add")
+// criação e inserção do elemento na pagina através da chamada de função responsavel
     addElement({
         name,
         url
