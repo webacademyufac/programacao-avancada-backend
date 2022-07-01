@@ -3,6 +3,15 @@ const input = document.querySelector('input')
 const form = document.querySelector('form')
 const li = document.querySelector('li')
 
+async function load(){
+
+    const res = await fetch('http://localhost:3000/')
+        .then(data => data.json())
+    res.urls.map(({name , url}) => addElement({name , url}))
+} 
+
+load()
+
 function addElement({ name, url }) { //Está adicionando elementos diretamente pelo javaScript (estou tentando implementar o localStorage para guarda os elementos salvos)
     // let dadoNome, dadoUrl = ''
     // localStorage.setItem(dadoNome , name )
