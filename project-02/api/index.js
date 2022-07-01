@@ -10,16 +10,24 @@ const URL = require('url')
 const fs = require('fs')
 const path = require('path')
 
-// criação do server
+// criação do server na porta 3000
 http.createServer((req, res) => {
+// adequaçao para não cair no CORS 
+    res.writeHead(
+        200,
+        {"Access-Control-Allow-Origin": "*"}
+    )
+
+
+
     const {
         name,
         url,
         del
     } = URL.parse(req.url, true).query //formado da query a ser utilizada no url no modelo:
     // http://localhost:3000/urls?name=Google&url=https://www.google.com&del=1
-    
-// escrever o json
+
+    // escrever o json
     function writeFile(cb) {
         fs.writeFile(
             path.join(__dirname, 'urls.json'),
@@ -31,7 +39,7 @@ http.createServer((req, res) => {
         )
     }
 
-//condicionais da query para realizar a requisição
+    //condicionais da query para realizar a requisição
     if (!name || !url) { //caso algo esteja vazio
         return res.end(JSON.stringify(data))
     }
@@ -41,8 +49,12 @@ http.createServer((req, res) => {
         return data.urls
     }
     // caso haja name e url para incluir
-    data.urls.push({name, url})
+    data.urls.push({
+        name,
+        url
+    })
     writeFile(message => res.end(message))
-    return data.urls//exibe o json
+    return data.urls //exibe o json
 
 }).listen(3000, () => console.log("server's runing"))
+// servidor rodando na porta 3000

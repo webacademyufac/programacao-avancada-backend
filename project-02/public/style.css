@@ -26,13 +26,26 @@ ul>li {
     /* border-bottom:4px solid #DCD6F7 ; */
     padding-left: 8px;
     height: 32px;
+    transition-delay: 50ms;
+    transition-duration: 700ms;
 
+}
+ul>li:first-child{
+    background-color: #4a37f5 ;
+
+}
+ul>li:hover{
+    background-color: #4a37f5 ;
 }
 
 li>a {
     color: whitesmoke;
     text-decoration: none;
     font-weight: 700;
+}
+li>a:hover{
+    color: #DCD6F7;
+    
 }
 
 form {
@@ -57,7 +70,7 @@ body>ul>li.li-listener {
 
 .remove {
     font-weight: 700;
-    color: #796BF6;
+    color: #4a37f5;
     width: 34px;
     margin-left: auto;
     margin-bottom: 8px;
@@ -71,15 +84,14 @@ body>ul>li.li-listener {
 
 .remove:hover {
     color: #DCD6F7;
-    background-color: #796BF6;
-    /* border-bottom: 3px solid #DCD6F7; */
+    background-color: #4a37f5;
     border-left: 7px solid #DCD6F7;
 }
 
 input#send-btn {
 
     color: #DCD6F7;
-    background: #796BF6;
+    background: #4a37f5;
     height: 40px;
     border-radius: 0px;
     transition-duration: 0.25s;
