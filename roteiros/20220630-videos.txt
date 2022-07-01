@@ -1,6 +1,7 @@
 Vídeos do final da aula de 30 de junho:
 
 O que é API? REST e RESTful?
+(assistir somente até 14min:00seg)
 https://youtu.be/ghTrp1x_1As
 
 MongoDB em 15 minutos
