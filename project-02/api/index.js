@@ -17,6 +17,15 @@ function writeFile(cb) {
 
 http.createServer((req, res) => {
 
+    res.writeHead(
+        200,
+        {"Access-Control-Allow-Origin":"*"}
+    )
+
+    /* res.setHeader('Access-Control-Allow-Origin', '*')
+    res.setHeader('Access-Control-Allow-Methods', 'POST, GET, DELETE, UPDATE')
+    res.setHeader('Access-Control-Max-Age', 2592000) */
+
     const { name, url, del } = URL.parse(req.url, true).query
     //Se não tiver nenhum valor em name e url mostra a string 'show'
 

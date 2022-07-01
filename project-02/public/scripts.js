@@ -2,6 +2,14 @@ const ul = document.querySelector('ul')
 const input = document.querySelector('input')
 const form = document.querySelector('form')
 
+async function load() {
+    const res = await fetch('http://localhost:8000/')
+        .then(data => data.json())
+    res.urls.map(item => addElement(item))
+}
+
+load()
+
 // Adiciona um elemento com o nome e url, inserindo também um botão para remoção do mesmo.
 function addElement({ name, url }) {
     document.querySelector("#links").insertAdjacentHTML("beforeend", `<li>${name}: <a href="${url}">${url}</a> <button type="button" class="remove" onclick="removeElement(this)">X</button> </li>`)
