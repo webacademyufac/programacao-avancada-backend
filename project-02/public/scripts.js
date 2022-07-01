@@ -2,6 +2,18 @@ const ul = document.querySelector('ul')
 const input = document.querySelector('input')
 const form = document.querySelector('form')
 
+async function load(){
+   const res = await fetch('http://localhost:3000/')
+    .then(data => data.json())
+
+    res.urls.map((name, url) => addElement(name, url))
+}
+load()
+
+
+
+
+
 // Adiciona um elemento com o nome e url, inserindo também um botão para remoção do mesmo.
 function addElement({ name, url }) {
     document.querySelector("#links").insertAdjacentHTML("beforeend", `<li>${name}: <a href="${url}">${url}</a> <button type="button" class="remove" onclick="removeElement(this)">X</button> </li>`)
@@ -11,7 +23,9 @@ function addElement({ name, url }) {
 function removeElement(element) {
     if (confirm('Tem certeza que deseja remover o link?'))
         element.parentNode.remove(element)
+        
 }
+
 
 // Adicionando ao formulário um escutador de evento que atende ao "submit".
 form.addEventListener('submit', (event) => {

@@ -50,3 +50,6 @@ ul {
   margin-left: auto;
   margin-right: auto;
 }
+li{
+  text-align: center;
+}
