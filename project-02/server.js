@@ -4,6 +4,7 @@ const path = require('path')
 
 http.createServer((req, res) => {
 
+    // Estratégia para o nome do documento e caminho para ele de maneira dinâmica.
     const file = req.url === '/' ? 'index.html' : req.url
     const filePath = path.join(__dirname,'public', file)
     const extname = path.extname(filePath)

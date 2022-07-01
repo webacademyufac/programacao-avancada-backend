@@ -3,13 +3,14 @@ const nomeFavorito = document.querySelector('#nome_favorito')
 const url = document.querySelector('#utl_favorito')
 const form = document.querySelector('form')
 
+// função que carrega os dados ao iniciar a pagina
 async function load() {
-
+// busca na API os dados, transforma para json e envia para função addElement para mostrat no html
     const res = await fetch("http://localhost:3000/")
         .then(data => data.json())
       res.urls.map((item) => addElement(item.name,item.url))  
 }
-
+// executa a função load
 load()
 
 function addElement(name, url) {
