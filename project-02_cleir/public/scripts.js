@@ -3,8 +3,17 @@ const nomeFavorito = document.querySelector('#nome_favorito')
 const url = document.querySelector('#utl_favorito')
 const form = document.querySelector('form')
 
-function addElement(name, url) {
+async function load() {
 
+    const res = await fetch("http://localhost:3000/")
+        .then(data => data.json())
+      res.urls.map((item) => addElement(item.name,item.url))  
+}
+
+load()
+
+function addElement(name, url) {
+    console.log(name, url)
    // conta a linhas da tabela dentro do tbody
     let e = table.rows.length
     // cria uma linha na tabela
