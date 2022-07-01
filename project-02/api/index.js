@@ -14,6 +14,11 @@ const data = require('./urls.json')
 // Servidor rodando na porta 3000.
 http.createServer((req, res) => {
 
+    res.writeHead(
+        200,
+        {"Access-Control-Allow-Origin": "*"}
+    )
+
     // Desestruturação da query string da URL para obter os valores que estão associados às chaves name, url e del.
     const { name, url, del } = URL.parse(req.url, true).query
 
