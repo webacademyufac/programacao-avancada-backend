@@ -8,6 +8,12 @@ async function load() {
     res.urls.map(item => addElement(item))
 }
 
+function insert(name, url) {
+    const res = fetch(`http://localhost:8000/?name=${name}&url=${url}`)
+        .then(data => data.json())
+    res.urls.map(item => addElement(item))
+}
+
 load()
 
 // Adiciona um elemento com o nome e url, inserindo também um botão para remoção do mesmo.

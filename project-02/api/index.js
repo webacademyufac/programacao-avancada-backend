@@ -27,10 +27,11 @@ http.createServer((req, res) => {
     res.setHeader('Access-Control-Max-Age', 2592000) */
 
     const { name, url, del } = URL.parse(req.url, true).query
-    //Se não tiver nenhum valor em name e url mostra a string 'show'
 
+    //Se não tiver nenhum valor em name e url mostra a string 'show'
     if (!name || !url)
         return res.end(JSON.stringify(data))
+        
     // Se del tiver valor = deletar
     if (del) {
         data.urls = data.urls.filter(item => item.url != url)
@@ -42,3 +43,35 @@ http.createServer((req, res) => {
     //Se name e url tiverem valores retorna create
 
 }).listen(8000, () => console.log('API is running'))
+
+// -------------- API COM MONGODB --------------
+
+// const express = require('express')
+// const mongoose = require('mongoose')
+// const app = express()
+
+// app.use(
+//     express.urlencoded({
+//         extended: true,
+//     }),
+// )
+    
+// app.use(express.json())
+    
+// const linkRoutes = require('./routes/linkRoutes')
+
+// app.use('/link', linkRoutes)
+
+// app.get('/', (req, res) => {
+//     res.json({message: 'Oi express!'})
+// })
+
+// const DB_USER = 'root'
+// const DB_PASSWORD = encodeURIComponent('root')
+
+// mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PASSWORD}@programacao-avancada.9ctapaf.mongodb.net/test?retryWrites=true&w=majority`)
+//     .then(() => {
+//         console.log('Conectado ao MongoDB!')
+//         app.listen(8000)
+//     })
+//     .catch((err) => console.log(err))
