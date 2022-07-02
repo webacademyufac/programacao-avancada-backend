@@ -4,6 +4,7 @@ const URL = require('url')
 const fs = require('fs')
 const path = require('path')
 
+// Escrevendo no arquivo através do writeFile, passando o caminho do arquivo JSON.
 function writeFile(cb) {
     fs.writeFile(
         path.join(__dirname, 'urls.json'),
@@ -17,9 +18,11 @@ function writeFile(cb) {
 
 http.createServer((req, res) => {
 
+    // Controle da política CORS.
     res.writeHead(
         200,
-        {"Access-Control-Allow-Origin":"*"}
+        {"Access-Control-Allow-Origin":"*"},
+        {"Access-Control-Allow-Methods":"POST, GET, DELETE, UPDATE"}
     )
 
     /* res.setHeader('Access-Control-Allow-Origin', '*')
@@ -28,7 +31,7 @@ http.createServer((req, res) => {
 
     const { name, url, del } = URL.parse(req.url, true).query
 
-    //Se não tiver nenhum valor em name e url mostra a string 'show'
+    //Se não tiver nenhum valor em name e url mostra os dados do arquivo JSON.
     if (!name || !url)
         return res.end(JSON.stringify(data))
         

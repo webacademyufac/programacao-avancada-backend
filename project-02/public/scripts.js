@@ -2,18 +2,33 @@ const ul = document.querySelector('ul')
 const input = document.querySelector('input')
 const form = document.querySelector('form')
 
+// Função que carrega os dados através do fetch do index.js.
 async function load() {
     const res = await fetch('http://localhost:8000/')
         .then(data => data.json())
     res.urls.map(item => addElement(item))
 }
 
+// Função para inserir os dados através do fetch, com método POST e body composto dos valores "name" e "url".
 function insert(name, url) {
-    const res = fetch(`http://localhost:8000/?name=${name}&url=${url}`)
-        .then(data => data.json())
-    res.urls.map(item => addElement(item))
+    // Objeto criado para ser passado no body.
+    const dados = {
+        nome: name,
+        link: url
+    }
+    fetch(`http://localhost:8000/?name=${name}&url=${url}`, {
+        method: 'POST',
+        body: JSON.stringify(dados)
+    })
 }
 
+function deletar(name, url) {
+    fetch(`http://localhost:8000/?name=${name}&url=${url}&del=1`, {
+        method: 'DELETE'
+    })
+}
+
+// Chamada da função quando a aplicação começa.
 load()
 
 // Adiciona um elemento com o nome e url, inserindo também um botão para remoção do mesmo.
@@ -23,8 +38,10 @@ function addElement({ name, url }) {
 
 // Função que remove um elemento da página html.
 function removeElement(element) {
-    if (confirm('Tem certeza que deseja remover o link?'))
+    if (confirm('Tem certeza que deseja remover o link?')){
+        console.log(this)
         element.parentNode.remove(element)
+    }
 }
 
 // Adicionando ao formulário um escutador de evento que atende ao "submit".
@@ -51,7 +68,9 @@ form.addEventListener('submit', (event) => {
     if (!/^http/.test(url))
         return alert('Digite a url da maneira correta.')
 
-    // Chama a função de adicionar elemento, passando o nome e url passado pelo usuário. 
+    insert(name, url)
+    
+    // Chama a função de adicionar elemento, passando o nome e url inserido pelo usuário. 
     addElement({ name, url })
 
     // Limpa o campo input após a inserção dos valores.
