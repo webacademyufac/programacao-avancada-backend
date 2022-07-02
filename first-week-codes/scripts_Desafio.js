@@ -3,17 +3,17 @@ fetch('http://jsonplaceholder.typicode.com/users')
         return data.json();
     })
     .then((data) => {
-        const vet = []
+        const vet = [] //armazenador dos nomes
         console.log(data)
-        for(i = 0; i<data.length; i++){
-            vet.push(`<li>${data[i].name}</li>`)
+        for(i = 0; i<data.length; i++){ //pode ser substituido por map e foreach
+            vet.push(`<li>${data[i].name}</li>`) //inserção do li com o nome necessario do objeto
 
             const filtrado = vet.join("")
             
-            document.getElementById('pessoas').innerHTML = filtrado          
+            document.getElementById('pessoas').innerHTML = filtrado    //inseração do json tratado para o documento       
          }         
     })
-    .catch(response => {
+    .catch(response => { //tratamento de erro
         if (!response.ok) {
         return new Error('a requisiçao falhou')
         }

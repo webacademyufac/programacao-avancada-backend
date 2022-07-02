@@ -50,7 +50,7 @@ form.addEventListener('submit', (event) => {
     } = input
 
     if (!value) {
-        input.style['border'] = '3px solid #f55945'
+        input.style['border'] = '3px solid #f55945'//sinalização na caixa do inbox da necessidade de corrigir os parametros
         alert('Preencha o campo!')
     }
 
@@ -79,6 +79,6 @@ form.addEventListener('submit', (event) => {
         })
     });
     input.value = ''
-    input.style['border'] = '2px inset rgb(133, 133, 133)'
+    input.style['border'] = '2px inset rgb(133, 133, 133)' //remoção da sinalização na caixa do inbox da necessidade de corrigir os parametros
 
 })
