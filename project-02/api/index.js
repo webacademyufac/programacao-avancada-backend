@@ -19,15 +19,14 @@ function writeFile(cb) {
 http.createServer((req, res) => {
 
     // Controle da política CORS.
-    res.writeHead(
-        200,
-        {"Access-Control-Allow-Origin":"*"},
-        {"Access-Control-Allow-Methods":"POST, GET, DELETE, UPDATE"}
-    )
+    // res.writeHead(
+    //     200,
+    //     {"Access-Control-Allow-Origin":"*"}
+    // )
 
-    /* res.setHeader('Access-Control-Allow-Origin', '*')
+    res.setHeader('Access-Control-Allow-Origin', '*')
     res.setHeader('Access-Control-Allow-Methods', 'POST, GET, DELETE, UPDATE')
-    res.setHeader('Access-Control-Max-Age', 2592000) */
+    res.setHeader('Access-Control-Max-Age', 2592000)
 
     const { name, url, del } = URL.parse(req.url, true).query
 
@@ -41,9 +40,9 @@ http.createServer((req, res) => {
         return writeFile(message => res.end(message))
     }
 
+    //Se name e url tiverem valores retorna create
     data.urls.push({ name, url })
     return writeFile(message => res.end(message))
-    //Se name e url tiverem valores retorna create
 
 }).listen(8000, () => console.log('API is running'))
 
