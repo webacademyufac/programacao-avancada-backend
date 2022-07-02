@@ -2,20 +2,37 @@ const ul = document.querySelector('ul')
 const input = document.querySelector('#input')
 const form = document.querySelector('#form')
 
-function addElement({ name, url }) {
+// Assim que a página é carregada faz uma requisição ao back-end
+window.addEventListener('load', e =>{
+    // O conteúdo da requisição é transformado de JSON para object e em seguida mapeado os dados passando chamando a função de exibir no html
+    fetch(`http://localhost:3000/`)
+        .then(content => content.json())
+        .then(data => data.urls.map(({name, url}) => showElement({name, url})))
+})
 
+// Função que tem como argumento um object desestruturado com os chaves name e url, para criação do elemento da lista
+function showElement({ name, url }) {
     const li = document.createElement('li')
-    li.innerHTML = `<a target="_blank" href="${url}">${name} </a> <button onClick="removeElement(this)" class="remove">X</button>`
+    li.innerHTML = `<a target="_blank" href="${url}">${name}</a> <button onClick="removeElement(this)" class="remove">X</button>`
     li.classList.add("li-listener")
-    // li = `<li class="li-listener" id=""> <a href="${url}">${name}: </a> <button class="btn btn-danger" id="exclui-fav">X</button></li>`
     ul.appendChild(li)
+    // li = `<li class="li-listener" id=""> <a target="_blank" href="${url}">${name}</a> <button onClick="removeElement(this)" class="remove">X</button></li>`
     // ul.innerHTML = li
 
 }
 
+// Função que tem como argumento um object desestruturado com os chaves name e ur, que manda uma requisição com a url tratada da forma como se espera para adicionar o elemento no arquivo .json
+function addElement({name, url}){
+
+    const urlTratada = url.replace(" ","")
+    fetch(`http://localhost:3000/?name=${name}&url=${urlTratada}`)
+}
+// trabalhar nessa função
 function removeElement(element) {
-    // console.log(element.parentNode)
-    element.parentNode.remove()
+    const name = element.parentNode.children[0].textContent
+    const href = element.parentNode.children[0].href
+    const url = href.substring(0, href.length - 1);
+    fetch(`http://localhost:3000/?name=${name}&url=${url}&del=1`)
 
 }
 
