@@ -3,12 +3,18 @@ const input = document.querySelector('#input')
 const form = document.querySelector('#form')
 
 // função para coleta de dados do backend 
-async function load() {    
+async function load() {
 
     const res = await fetch('http://localhost:3000/')
         .then(data => data.json())
     // console.log(res.urls)
-    res.urls.map(({name, url}) => addElement({name, url}))
+    res.urls.map(({
+        name,
+        url
+    }) => addElement({
+        name,
+        url
+    }))
 
 }
 load()
@@ -57,11 +63,21 @@ form.addEventListener('submit', (event) => {
         return alert('Digite a url da maneira correta.')
 
     // console.log("add")
-// criação e inserção do elemento na pagina através da chamada de função responsavel
+    // criação e inserção do elemento na pagina através da chamada de função responsavel
     addElement({
         name,
         url
     })
+
+    fetch('http://localhost:3000/', {
+        method: "POST", // or "PUT" with the url changed to, e.g "https://reqres.in/api/users/2"
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify({
+            name: "Captain Anonymous"
+        })
+    });
     input.value = ''
     input.style['border'] = '2px inset rgb(133, 133, 133)'
 

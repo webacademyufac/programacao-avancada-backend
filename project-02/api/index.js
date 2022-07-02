@@ -12,12 +12,24 @@ const path = require('path')
 
 // criação do server na porta 3000
 http.createServer((req, res) => {
-// adequaçao para não cair no CORS 
+    // adequaçao para não cair no CORS 
+    const header = {
+        'Access-Control-Allow-Origin': '*', //permitir todas as origens
+        'Access-Control-Allow-Methods': 'DELETE, POST, GET', //metodos de requisição utilizados na aplicação
+        'Access-Control-Max-Age': 2592000, //em segundos
+    };
+    if (req.method === "POST")
     res.writeHead(
-        200,
-        {"Access-Control-Allow-Origin": "*"}
+        200, {
+            "Access-Control-Allow-Origin": "*"
+        }
     )
-
+    // if (req.method === "DELETE")
+    // res.writeHead(
+    //     200, {
+    //         "Access-Control-Allow-Origin": "*"
+    //     }
+    // )
 
 
     const {
