@@ -11,7 +11,7 @@ http.createServer((req, res) => {
     res.writeHead(200,
         { "access-control-allow-origin": "*" })
     // pega a url da requisição feita a API 
-    const { name, url, del } = URL.parse(req.url, true).query
+    const { name, url, del } = URL.parse(req.url,true).query
 
     // verifica se a existo nome e url! se não existe mostra os dados do JSON
     if (!name || !url) {

@@ -13,8 +13,23 @@ async function load() {
 // executa a função load
 load()
 
-function addElement(name, url) {
-    console.log(name, url)
+// função para adicionar ou deletar um elemento
+
+async function registerOrDelete(name, url, del){
+    // monta URL 
+    let parameters = `?name=${name}&url=${url}`;
+    // verifica se o existe parametro para delatar a url
+    if(del){
+        parameters += "&del=1"
+    }
+    // envia os parameters para o servidor para cadastro ou para a exclusão
+    const res = await fetch(`http://localhost:3000/${parameters}`)
+    .then(data => data.text())
+    console.log(res)
+}
+
+function addElement(name,url) {
+   
    // conta a linhas da tabela dentro do tbody
     let e = table.rows.length
     // cria uma linha na tabela
@@ -29,12 +44,23 @@ function addElement(name, url) {
     cel1.innerHTML = `<a href="${url}" target="_blank">${name}</a>`
     cel2.innerHTML = url
     cel3.innerHTML = `<button type="button" class="btn btn-danger btn-sm" onclick="removeElement(${e})"><i class="bi bi-trash"></i></button>`
+    // enviar os arquivos para o servidor
 }
 
 
 function removeElement(element) {
-    // remove o elemento clicado 
-    table.deleteRow(element)
+    // pergunata se realmente quer remover o elemento
+    if(confirm('Você tem certeza que deseja remover o elemento?')){
+       // pega os valores do elemento clicado nome e url
+       let rowTable = table.rows[element]
+       let name = rowTable.cells.item(1).children[0].innerHTML
+       let url = rowTable.cells.item(2).innerHTML
+        //remove o elemento no servidor
+       registerOrDelete(name,url,del=true)
+       // remove o elemento da tabela
+       table.deleteRow(element)
+        
+    }
 }
 /*escutando o evento submit*/
 form.addEventListener('submit', (event) => {
@@ -58,6 +84,8 @@ form.addEventListener('submit', (event) => {
 
     //chama a função que adiciona o elemento no HTML.
     addElement(value_nome, value_url)
+    // chama a função que salva o arquivo no servidor 
+    registerOrDelete(value_nome,value_url,del=false)
 
     //Fazendo a limpeza dos campos do formulário.
     url.value = ''
