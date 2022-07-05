@@ -26,8 +26,9 @@ function addElement({name, url}){
     fetch(`http://localhost:3000/?name=${name}&url=${urlTratada}`)
 }
 
+// Função que tem como argumento o Elemento html passado no html que é o button 
 function removeElement(element) {
-    // Pega o conteúdo do elemento <a> e seu href para passar no fetch 
+    // Pega o conteúdo do elemento <a>(irmão do button) e seu href para passar no fetch 
     const name = element.parentNode.children[0].textContent
     const href = element.parentNode.children[0].href
     const url = href.substring(0, href.length - 1);
