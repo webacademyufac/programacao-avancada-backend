@@ -1,20 +1,12 @@
 {
   "urls": [
     {
+      "name": "Exemplo",
+      "url": "http://www.exemplo.com/"
+    },
+    {
       "name": "Web Academy",
       "url": "http://200.129.173.65/"
-    },
-    {
-      "name": "Google",
-      "url": "http://www.google.com"
-    },
-    {
-      "name": "Futbin",
-      "url": "https://www.futbin.com"
-    },
-    {
-      "name": "Twitter",
-      "url": "https://www.twitter.com"
     }
   ]
 }

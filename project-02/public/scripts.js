@@ -3,18 +3,29 @@ const input = document.querySelector('input')
 const form = document.querySelector('form')
 
 /* Função assíncrona que carrega os dados do arquivo JSON assim que o fetch é feito. Funciona adicionando na lista todos os items inseridos neste documento, toda vez que é carregado. */
-async function load() {
-    const res = await fetch('http://localhost:8000/')
-        .then(data => data.json())
-    res.urls.map(item => addElement(item))
-}
+// async function load() {
+//     const res = await fetch('http://localhost:8000/')
+//         .then(data => data.json())
+//     res.urls.map(item => addElement(item))
+// }
+
+function load() {
+    ul.innerHTML = '';
+    fetch('http://localhost:8000/')
+    .then(response => response.json())
+    .then(data => {
+        data.map(item => {
+            addElement({ item });
+        });
+    }).catch(err => console.log(err.message));
+};
 
 /* Chamada da função quando a aplicação começa. */
 load()
 
 /* Função para adicionar um item da lista. Após a seleção da lista através do seu id com o querySelector, é inserido um novo elemento HTML. O primeiro parâmetro é a posição deste novo elemento, e o segundo é o elemento em si. No caso, é passando um item da lista, e um botão que após pressionado, chama a função removeElement. */
-function addElement({ name, url }) {
-    document.querySelector("#links").insertAdjacentHTML("beforeend", `<li>${name}: <a href="${url}">${url}</a> <button type="button" class="remove" onclick="removeElement(this)">X</button> </li>`)
+function addElement({ item }) {
+    document.querySelector("#links").insertAdjacentHTML("beforeend", `<li>${item.name}: <a href="${item.url}">${item.url}</a> <button type="button" class="remove" onclick="removeElement(this)">X</button> </li>`)
 }
 
 /* Função para remover um item da lista. As constantes criadas aqui recebem um split do elemento que será removido, pegando somente o conteúdo necessário para passar na query da fetch. Ao final o elemento e seu pai são removidos, ou seja, todo o item da lista. */
