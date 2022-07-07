@@ -1,0 +1,3 @@
+Desafio final: quando adicionamos ou deletamos na interface da nossa aplicação, vemos as coisas acontecerem, mas depois que a página carrega perdemos as alterações por não estar acontecendo sincronia com a API. O objetivo é fazer isso acontecer, ou seja, quando adicionar no frontend, adicionar no documento JSON e, da mesma forma, quando apagar no frontend, apagar no documento JSON.
+
+Desafio A+: utilizar MongoDB ao invés do documento JSON.
