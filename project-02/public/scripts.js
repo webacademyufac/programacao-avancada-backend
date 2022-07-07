@@ -27,8 +27,9 @@ function addElement({ name, url }) { //Está adicionando elementos diretamente p
     })
 }
 
-function removeElement(event) {
-    console.log(event.currentTarget.parentNode.remove())
+function removeElement( name, url) {
+    
+    delJson({ name , url})
     
 }
 
@@ -50,12 +51,19 @@ form.addEventListener('submit', (event) => {
         return alert('Digite a url da maneira correta.')
 
     addElement({ name, url })
+    envJson({name, url})
 
     input.value = ''
 })
 
+ // Função encarregada de enviar os parametros esperados pela api para salvá-los no arquivo json.
+ function envJson ({name, url}) {
+    fetch('http://localhost:3000/'+'?name='+name+'&url='+url)
+}
 
-
-
+    // Função encarregada de enviar os parametros esperados pela api para deletá-los do arquivo json.
+function delJson ({name,url}) {
+    fetch('http://localhost:3000/'+'?name='+name+'&url='+url+'&del=1')
+}
 
 

@@ -7,6 +7,14 @@
     {
       "name": "Youtube",
       "url": "'https://youtube.com'"
+    },
+    {
+      "name": "youtube",
+      "url": "'http://youtube.com.br'"
+    },
+    {
+      "name": "eita",
+      "url": "https://eta"
     }
   ]
 }
