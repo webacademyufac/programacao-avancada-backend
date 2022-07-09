@@ -5,24 +5,8 @@
       "url": "http://200.129.173.65/"
     },
     {
-      "name": "Orkut",
-      "url": "https://www.orkut.com"
-    },
-    {
-      "name": "Facebook",
-      "url": "https://www.fb.com"
-    },
-    {
-      "name": "Facebook",
-      "url": "https://www.fb.com"
-    },
-    {
-      "name": "Google",
-      "url": "https://www.google.com"
-    },
-    {
-      "name": "Google",
-      "url": "https://www.google.com"
+      "name": "orkut",
+      "url": "http://www.orkut.com"
     }
   ]
 }
