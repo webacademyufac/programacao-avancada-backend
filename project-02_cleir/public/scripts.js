@@ -43,7 +43,9 @@ function addElement(name,url) {
     cel0.innerHTML = e + 1
     cel1.innerHTML = `<a href="${url}" target="_blank">${name}</a>`
     cel2.innerHTML = url
-    cel3.innerHTML = `<button type="button" class="btn btn-danger btn-sm" onclick="removeElement(${e})"><i class="bi bi-trash"></i></button>`
+    // cel3.innerHTML = `<button type="button" class="btn btn-danger btn-sm" onclick="removeElement(${e})"><i class="bi bi-trash"></i></button>`
+    cel3.innerHTML = `<button type="button" onclick="removeElement(${e})">Excluir</button>`
+
     // enviar os arquivos para o servidor
 }
 

@@ -10,7 +10,7 @@ http.createServer((req, res) => {
     const filePath = path.join(__dirname,'public', file)
     // pega a extenção do arquivo e verifica se o arquivo  é permitido 
     const extname = path.extname(filePath)
-    const allowedFileTypes = ['.html','.css','.js']
+    const allowedFileTypes = ['.html','.css','.js','.png']
     const allowed = allowedFileTypes.includes(extname) 
     // caso seja falso para a execução
     if(!allowed) return 
