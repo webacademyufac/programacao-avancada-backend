@@ -22,11 +22,15 @@
 
 <body>
     <form id="form">
-        <!-- <div class="container"> -->
-        <input type="text" id="input" class="input-fav"  placeholder="Digite o nome do endereço e a URL, separados por virgula">
-        <input type="submit"  class="btn btn-warning">
-            <!-- <input type="submit" value="Salvar"> -->
-        <!-- </div> -->
+
+        <div class="input-group mb-3">
+            <input type="text" id='input' class="form-control"
+                placeholder="Digite o nome do endereço e a URL, separados por virgula" aria-label="Recipient's username"
+                aria-describedby="basic-addon2"  style="width: 450px">
+            <div class="input-group-append">
+                <input class="btn btn-outline-secondary" type="submit"  id="send-btn"></input>
+            </div>
+        </div>
     </form>
     <ul>
         <li><Strong>NUNCA MAIS ESQUEÇA UM ENDEREÇO!</Strong></li>
