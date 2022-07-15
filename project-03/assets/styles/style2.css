@@ -144,7 +144,8 @@ p {
 
     transition: 600ms;
 }
-p:hover{
+
+p:hover {
     background: #161925;
 }
 
@@ -342,4 +343,9 @@ li.tablet>a:hover {
     color: #23395B;
     font-weight: bolder;
     /* border-bottom: 2px solid #23395B; */
+}
+
+
+footer#outer-footer-bar {
+    visibility: hidden;
 }

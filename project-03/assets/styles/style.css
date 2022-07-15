@@ -234,6 +234,6 @@ ul.alt-nav{
     visibility: hidden;
 }
 
-ul.alt-nav, div#ad, div#video-box{
+ul.alt-nav, div#ad, div#video-box, footer#outer-footer-bar{
     visibility: hidden;
 }

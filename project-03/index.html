@@ -14,74 +14,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-
-    <link rel="stylesheet" media="screen and (max-width: 436px)" href="/assets/styles/style.css">
-    <!-- <link rel="stylesheet"href="/assets/styles/style.css"> -->
-    <link rel="stylesheet" media="screen and (min-width: 437px) and (max-width: 1134px)"
-        href="/assets/styles/style2.css">
-    <link rel="stylesheet" media="screen and (min-width: 1134.2px)" href="/assets/styles/style3.css">
+    <!-- <link rel="stylesheet" href="./assets/styles/styleUni.css"> --> <!--folha unificada com as media queries-->
+    <link rel="stylesheet" media="screen and (max-width: 436px)" href="../project-03/assets/styles/style.css">
+    <link rel="stylesheet" media="screen and (min-width: 437px) and (max-width: 1134px)" href="../project-03/assets/styles/style2.css">
+    <link rel="stylesheet" media="screen and (min-width: 1134.2px)" href="../project-03/assets/styles/style3.css">
 </head>
 
 <body>
     <div class="upper-content">
-        <div class="logo"><img src="./assets/img/logo-removebg-preview.png" alt="" srcset=""></div>
+        <div class="logo"><a href=""> <img src="./assets/img/logo-removebg-preview.png" alt="Logomarca que remete a silhueta da cabeça de um coelho com uma das orelhas caidas" srcset=""></a></div>
         <h1 class="mark">Nunca mais esqueça um endereço</h1>
-    </div>
+    </div><!--fim da div upper-content-->
     <div class="screen">
-
-        <!--fim da div upper-content-->
 
         <div id="generic-container">
             <div id="main">
                 <form id="form">
                     <div class="head-content">
-                        <input type="text" id='' class="content-input" placeholder="Digite o nome e a URL do endereço"
-                            aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <input type="text" id="" class="content-input" placeholder="Digite o nome e a URL do endereço" aria-label="Recipient's username" aria-describedby="basic-addon2">
                         <div>
-                            <input class="send-button" type="submit" id="send-btn"></input>
-                        </div>
-                        <!--fim da div head-content-->
+                            <input class="send-button" type="submit" id="send-btn">
+                        </div><!--fim da div head-content-->
+                        
                     </div>
-                </form>
+                </form><!--conteudo geral inserido pelo usuario-->
                 <ul>
-                    <!--conteudo geral inserido pelo usuario-->
 
                     <div class="each-content">
                         <li class="list-content"><a target="_blank" href=" https://www.google.com">SITIO1</a></li>
-                        <button onclick="removeElement(this)" class="remove">X</button>
-                        </li>
-                    </div>
-                    <!--fim da div each-content-->
+                        <button onclick="removeElement(this)" class="remove">X</button>                        
+                    </div><!--fim da div each-content-->
+
                     <div class="each-content">
                         <li class="list-content">
                             <a target="_blank" href=" https://www.google.com">SITIO1</a>
-                        </li><button onclick="removeElement(this)" class="remove">X</button>
-                        </li>
-                    </div>
-                    <!--fim da div each-content-->
+                        </li><button onclick="removeElement(this)" class="remove">X</button>                        
+                    </div><!--fim da div each-content-->
+
                     <div class="each-content">
                         <li class="list-content"><a target="_blank" href=" https://www.google.com">SITIO1</a></li>
-                        <button onclick="removeElement(this)" class="remove">X</button>
-                        </li>
-                    </div>
-                    <!--fim da div each-content-->
-            </div>
-            <!--fim da div main-->
+                        <button onclick="removeElement(this)" class="remove">X</button>                        
+                    </div><!--fim da div each-content-->
+                    
+            </ul></div><!--fim da div main-->
             <div id="video-box">
                 <div id="video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/0s8xOkf_uk0"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/0s8xOkf_uk0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
                 </div>
             </div>
-        </div>
-        <!--fim da div id="generic-container"-->
+            <footer id="outer-footer-bar">
+                <span id="footer-text"> Feito com carinho por <a href="#" id="portifolio">crCoelhos</a></span>
+                <span id="inner-footer-bar">
+                    <a href="https://github.com/crCoelhos" target="_blank"><img id="footer-img" src="./assets/img/GitHub-Mark-32px.png" alt="logo do github que serve de link para o perfil do desenvolvedor"></a>
+                    <a href="https://twitter.com/croelho" target="_blank"><img src="./assets/img/icons8-twitter-30.png" id="footer-img" alt=""></a>
+                    <a href="https://www.instagram.com/ricsaar/" target="_blank"><img src="./assets/img/icons8-instagram-30.png" id="footer-img" alt=""></a>
+                </span>
+            </footer>
+        </div><!--fim da div id="generic-container"-->
 
 
 
-        </ul>
-        <!--fim da ul responsavel pelo conteudo geral inserido pelo usuario-->
+        
+        
         <div id="ad">
             <a href="#" class="ad" target="_blank">
                 <div class="merchan">
@@ -105,7 +99,7 @@
                 </div>
             </a>
             <a href="#" class="ad" target="_blank">
-                <div class="merchan">
+                </a><div class="merchan"><a href="#" class="ad" target="_blank">
                     <p>Vou sair, te ver agora
                         Vou voltar a viver
                         Pois sem você
@@ -113,9 +107,9 @@
                         Como o dia sem sol</p>
             </a>
         </div>
-    </div>
-    </div>
-    <!--fim da div screen-->
+        </div>
+    </div><!--fim da div screen-->
+    
 
 
 
