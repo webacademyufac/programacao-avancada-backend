@@ -1,0 +1,20 @@
+{
+  "urls": [
+    {
+      "name": "Spotify Web",
+      "url": "http://open.spotify.com"
+    },
+    {
+      "name": "My All - Gabriel Henrique",
+      "url": "https://www.youtube.com/watch?v=2LtD5vMIobQ"
+    },
+    {
+      "name": "WEB ACADEMY",
+      "url": "http://200.129.173.65/"
+    },
+    {
+      "name": "Fontawesome - Link direto",
+      "url": "https://site-assets.fontawesome.com/releases/v6.1.1/svgs/duotone/magnifying-glass.svg"
+    }
+  ]
+}

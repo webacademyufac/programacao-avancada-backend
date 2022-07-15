@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save ur links!</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div id="logo-background">
+            <img src="./icons/logo.svg" id="logo">
+        </div>
+        <div class="diviser-inline"></div>
+
+        <div id="input-box">
+
+            <div id="input-background" class="d-flex">
+                
+                <img src="./icons/bars.svg" id="topbar-bars" alt=""> <!-- bars-->
+
+                <div id="burger-menu" class="d-none">
+                    <div id="close-menu">
+                        <span >X</span>
+                    </div>
+                    <ul id="menu">
+                        <li>User Login</li>
+                        <li>Page Configurations</li>
+                    </ul>
+                </div>
+
+                    <form action="/">
+                        <div id="form">
+                            <input id="input-form" type="text" placeholder="NAME,URL...">
+                        </div>
+                    </form>
+
+                <img src="./icons/save.svg" id="topbar-save"> <!-- save button-->
+            </div>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <form action="/" id="search-form">
+            <div id="search-input">
+                <input type="text" placeholder="Filtrar por nome..." id="search-cards-input">
+            </div>
+        </form>
+
+        <div id="card-group">
+            
+        </div>
+
+    </main>
+
+    <footer>
+
+        <div id="footer">
+            <div id="left-footer">
+                <a class="title1">About Project</a>
+                <a class="title2">About US</a>
+            </div>
+            
+            <div id="right-footer">
+                <a class="title3">Social Medias</a>
+                <div id="social-medias-footer">
+                    <img src="./icons/social medias/twitter.svg" alt=""> <!--Twitter-->
+                    <img src="./icons/social medias/instagram.svg" alt=""> <!--Instagram-->
+                    <img src="./icons/social medias/facebook.svg" alt=""> <!--Facebook-->
+                </div>
+                <a class="title4">Developed By:</a>
+                <div id="developed-by">
+                    <img src="./icons/social medias/github.svg" alt=""> <!--Github-->
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script src="./script.js"></script>
+    <script src="./animations.js"></script>
+</body>
+
+</html>
