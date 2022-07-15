@@ -1,0 +1,11 @@
+Vídeos do final da aula de 30 de junho:
+
+O que é API? REST e RESTful?
+(assistir somente até 14min:00seg)
+https://youtu.be/ghTrp1x_1As
+
+MongoDB em 15 minutos
+https://youtu.be/j-cjF1GkEMQ
+
+Crie uma API RESTful com Node.js e MongoDB | CRUD com Node, Express e Mongoose
+https://youtu.be/K5QaTfE5ylk
