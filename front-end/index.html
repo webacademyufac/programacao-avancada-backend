@@ -8,39 +8,70 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav></nav>
-    <div>
+    <nav> <img src="/imagem/star.svg" alt=""></nav>
+    <div id="">
         <h1> Favorite seus sites preferidos! </h1>
-        <img src="/imagem/icon.svg" alt="">
+        <img src="/imagem/icon-1.svg" alt="" id="icon">
         <ul>
-            Para favoritar seus sites basta:
-           <li> 1 - Digitar o nome do site </li>
-           <li> 2- Separar com “,” </li>
-            <li>3 - Digitar a URL </li> 
-        </ul>
-    
-        <input type="text" name="" id=""  placeholder="Ex: Google, google.com...">
-        <table>
-            <tr>
-              <th>Site</th>
-              <th>Ação</th>
-            </tr>
-            <tr>
-              <td> <a href="#"> Google </a> </td>
-              <td> 
-                  <button> Apagar </button>  
-              </td>
-            </tr>
-            <tr>
-              <td> <a href="#"> Google </a> </td>
-              <td> 
-                <button> Apagar </button>  
-              </td>
-            </tr>
-          </table>
-
+           <b> Para favoritar seus sites basta: </b>
+           <li>1. Digitar o nome do site </li>
+           <li>2. Separar com “,” </li>
+           <li>3. Digitar a URL </li> 
+        </ul> 
+        <div id="div-adicionar">
+          <input type="text" name="" id=""  placeholder="Ex: Google, google.com...">
+          <button id="bnt-adicionar"> <img src="/imagem/adicionar.svg" alt=""></button>  
+        </div> 
+       
+        <div id="tabela">
+          <table>
+            <caption>Sites salvos</caption>
+              <tr>
+                <th>Site</th>
+                <th>Ação</th>
+              </tr>
+              <tr>
+                <td> <a href="#"> Google </a> </td>
+                <td> 
+                    <button> <img src="imagem/lixeira.png" alt=""> </button>  
+                </td>
+              </tr>
+              <tr>
+                <td> <a href="#"> Google </a> </td>
+                <td> 
+                  <button> <img src="imagem/lixeira.png" alt=""> </button>  
+                </td>
+              </tr>
+            </table>
+        </div>
         
     </div>
+    <div  class="container" id="info">
+      <div  id="tutorial">
+        <h3>Tutorial</h3>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.It was popularised in the 1960s
+           with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+          software like Aldus PageMaker including versions of Lorem Ipsum
+        </p>
+      </div>
+  
+      <div class="container"  >
+        <div id="video">
+          <h3> Demonstração </h3>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/-LwBqG7uXbY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+  
+        <div id="anuncio">
+          <h3> Anúncio </h3>
+          <img src="/imagem/anuncio.jpeg" alt="">
+        </div>
+      </div>
+      
+    </div>
+    
+
+  
     <footer> <small>&copy; Copyright 2022, Desenvolvido por @AndrielleLima</small></footer>
 
 </body>
