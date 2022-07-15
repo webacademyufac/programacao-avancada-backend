@@ -1,0 +1,30 @@
+#button{
+    background-color: red;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+    color: aliceblue;
+}
+#button:hover{
+    background-color: rgb(106, 33, 174);
+}
+
+.texto{
+    font-weight: bolder;
+    background-color: rgb(251, 148, 148);
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.texto:hover{
+    background-color: brown ;
+    color: aliceblue;
+}
+
+#title{
+    color: red;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
