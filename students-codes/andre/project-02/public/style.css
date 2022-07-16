@@ -1,0 +1,55 @@
+body {
+  align-items: center;
+  background-color: white;
+  justify-content: center;
+}
+
+form {
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: auto;
+  padding: 20px;
+  width: 800px;
+  margin: auto;
+}
+
+input {
+  height: 50px;
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.remove {
+  background-color: red;
+  border-radius: 12px;
+  border: 0;
+  color: #eee;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.remove:hover {
+  transform: scale(1.1);
+}
+
+.titulo {
+  text-align: center;
+  margin-right: 30px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+ul {
+  list-style-type: none;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
