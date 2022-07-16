@@ -1,0 +1,13 @@
+let x = 10
+
+
+// const fora = () => {
+//     let x = 2
+//     function somaMais5(){
+//         return x+5
+//     }
+//     return somaMais5()
+// }
+
+//faz o mesmo que a função acima so que com a escrita reduzida
+const fora = () => (x= 3 ,() => x+5)()

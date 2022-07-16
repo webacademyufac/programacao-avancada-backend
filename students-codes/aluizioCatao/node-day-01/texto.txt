@@ -1,0 +1,1 @@
+Este é o texto que está dentro do arquivo que estou chamando. OUtro texto de funcao callback.
