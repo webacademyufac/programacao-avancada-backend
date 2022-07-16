@@ -1,0 +1,8 @@
+Transforme a função a seguir em uma arrow function.
+
+function fora(){
+    function somarXMais5(){
+        return x+5
+    }
+    return somarXMais5()
+}
